@@ -1,0 +1,12 @@
+.DS_Store
+**/.DS_Store
+
+# Local source libraries and generated OCR are intentionally not published.
+/Myers/
+/Barrons/
+*.pdf
+*.epub
+
+# Local authoring and QA notes are not required by GitHub Pages.
+WORKBOOK-SCENARIO-NOTES.md
+tools/

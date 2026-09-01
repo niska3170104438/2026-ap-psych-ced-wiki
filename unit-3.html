@@ -1,0 +1,3411 @@
+<!doctype html>
+<!-- Generated from index.html by tools/build_wiki_pages.mjs. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A searchable 2026 AP Psychology CED wiki organized by study synthesis, cleaned Essential Knowledge, CED-derived concepts with definitions and concise examples, and separate Barron enrichment.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23213a7a'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='white'%3E%CE%A8%3C/text%3E%3C/svg%3E">
+  <title>2026 AP Psych CED</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --topbar-height: 74px;
+      --unit-index-height: 50px;
+      --ink: #17202a;
+      --muted: #5e6873;
+      --paper: #f7f3ea;
+      --panel: #fffdf8;
+      --line: #d7d0c2;
+      --indigo: #213a7a;
+      --indigo-2: #3658a7;
+      --coral: #e05f47;
+      --sage: #28756c;
+      --gold: #b8761f;
+      --violet: #7253a5;
+      --shadow: 0 10px 30px rgba(39, 42, 48, .08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 142px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 86% 4%, rgba(224, 95, 71, .08), transparent 23rem),
+        linear-gradient(90deg, rgba(33, 58, 122, .025) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 28px 28px, auto;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    button, input { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -60px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: white;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus { top: 16px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      min-height: 74px;
+      padding: 12px 24px;
+      border-bottom: 1px solid rgba(33, 58, 122, .14);
+      background: rgba(247, 243, 234, .92);
+      backdrop-filter: blur(18px);
+    }
+
+    .unit-index {
+      position: sticky;
+      top: var(--topbar-height);
+      z-index: 29;
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      min-height: var(--unit-index-height);
+      padding: 7px 24px;
+      overflow-x: auto;
+      border-bottom: 1px solid rgba(33, 58, 122, .15);
+      background: rgba(255, 253, 248, .96);
+      box-shadow: 0 5px 16px rgba(39, 42, 48, .06);
+      backdrop-filter: blur(18px);
+      scrollbar-width: thin;
+    }
+
+    .unit-index-label {
+      flex: 0 0 auto;
+      margin-right: 3px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .unit-index a {
+      flex: 0 0 auto;
+      padding: 6px 11px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: #424b54;
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .unit-index a:hover,
+    .unit-index a:focus-visible {
+      border-color: #c8c0b2;
+      background: #f1ece2;
+      color: var(--indigo);
+      outline: none;
+    }
+
+    .unit-index a[aria-current="location"] {
+      border-color: var(--indigo);
+      background: var(--indigo);
+      color: white;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+      font-weight: 850;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--indigo);
+      color: white;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 14px;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,.12);
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 760px;
+      margin-inline: auto;
+    }
+
+    .search-wrap::before {
+      content: "⌕";
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-54%);
+      color: var(--indigo);
+      font-size: 24px;
+      pointer-events: none;
+    }
+
+    #search {
+      width: 100%;
+      height: 46px;
+      padding: 0 88px 0 45px;
+      border: 1px solid #c8c0b2;
+      border-radius: 14px;
+      outline: none;
+      background: rgba(255, 253, 248, .95);
+      color: var(--ink);
+      box-shadow: 0 3px 14px rgba(39, 42, 48, .05);
+    }
+
+    #search:focus {
+      border-color: var(--indigo-2);
+      box-shadow: 0 0 0 4px rgba(54, 88, 167, .12);
+    }
+
+    .shortcut {
+      position: absolute;
+      right: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      border-bottom-width: 2px;
+      border-radius: 7px;
+      background: #f3eee4;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .search-suggestions {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 8px);
+      z-index: 120;
+      max-height: min(62vh, 520px);
+      overflow-y: auto;
+      border: 1px solid #c8c0b2;
+      border-radius: 14px;
+      background: #fffdf8;
+      box-shadow: 0 18px 48px rgba(25, 36, 64, .2);
+    }
+
+    .search-suggestion {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      padding: 11px 13px;
+      border: 0;
+      border-bottom: 1px solid #ebe5d9;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    .search-suggestion:last-child { border-bottom: 0; }
+    .search-suggestion:hover,
+    .search-suggestion:focus-visible,
+    .search-suggestion[aria-selected="true"] { background: #eef3fb; outline: none; }
+    .search-suggestion-code { color: var(--coral); font-size: 9px; font-weight: 900; text-transform: uppercase; }
+    .search-suggestion b { overflow-wrap: anywhere; color: var(--indigo); font-size: 12px; }
+    .search-suggestion small { display: block; margin-top: 2px; overflow: hidden; color: var(--muted); font-size: 9.5px; text-overflow: ellipsis; white-space: nowrap; }
+    .search-suggestion-page { color: var(--muted); font-size: 9px; font-weight: 800; white-space: nowrap; }
+
+    .search-status {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .search-step {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border: 1px solid #cbc3b5;
+      border-radius: 8px;
+      background: #fffdf8;
+      color: var(--indigo);
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .search-step:disabled { cursor: default; opacity: .35; }
+
+    .result-count {
+      min-width: 78px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: 264px minmax(0, 1fr);
+      min-height: calc(100vh - var(--topbar-height) - var(--unit-index-height));
+    }
+
+    aside {
+      position: sticky;
+      top: calc(var(--topbar-height) + var(--unit-index-height));
+      align-self: start;
+      height: calc(100vh - var(--topbar-height) - var(--unit-index-height));
+      padding: 28px 20px 30px 24px;
+      overflow-y: auto;
+      border-right: 1px solid rgba(33, 58, 122, .12);
+      background: rgba(255, 253, 248, .62);
+    }
+
+    .eyebrow {
+      margin: 0 0 9px;
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .side-title {
+      margin: 0 0 18px;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .nav-label {
+      margin: 22px 8px 7px;
+      color: #7b7469;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .toc {
+      display: grid;
+      gap: 3px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 9px;
+      border-radius: 10px;
+      color: #38414b;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .toc a:hover,
+    .toc a:focus-visible {
+      background: #ebe6da;
+      color: var(--indigo);
+      outline: none;
+    }
+
+    .toc-num {
+      display: grid;
+      flex: 0 0 24px;
+      height: 24px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .source-note {
+      margin-top: 24px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.52);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    main {
+      width: min(1180px, 100%);
+      min-width: 0;
+      padding: 46px clamp(24px, 5vw, 72px) 100px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(30px, 5vw, 62px);
+      border: 1px solid rgba(33, 58, 122, .18);
+      border-radius: 30px;
+      background: var(--indigo);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -100px;
+      width: 350px;
+      height: 350px;
+      border: 50px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+
+    .hero .eyebrow { color: #ffad91; }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: ui-serif, Georgia, serif;
+      font-size: clamp(46px, 7vw, 84px);
+      font-weight: 650;
+      letter-spacing: -.055em;
+      line-height: .95;
+    }
+
+    .hero-copy {
+      max-width: 710px;
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.82);
+      font-size: clamp(16px, 2vw, 20px);
+    }
+
+    .stats {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .stat b {
+      display: block;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 26px;
+    }
+
+    .stat span { color: rgba(255,255,255,.68); font-size: 12px; }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      max-width: 100%;
+      margin: 34px 0 4px;
+      padding-bottom: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .filter {
+      flex: 0 0 auto;
+      padding: 8px 13px;
+      border: 1px solid #cbc3b5;
+      border-radius: 999px;
+      background: var(--panel);
+      color: #4a535d;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .filter:hover { border-color: var(--indigo-2); color: var(--indigo); }
+
+    .filter[aria-pressed="true"] {
+      border-color: var(--indigo);
+      background: var(--indigo);
+      color: white;
+    }
+
+    .content-section { margin-top: 68px; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .section-kicker {
+      margin: 0 0 5px;
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: ui-serif, Georgia, serif;
+      font-size: clamp(29px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .section-meta {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .unit-intro {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background: #eee9df;
+    }
+
+    .unit-number {
+      display: grid;
+      width: 92px;
+      height: 92px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--unit-color, var(--indigo));
+      color: white;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .unit-intro p { margin: 0; color: #424b54; }
+
+    .unit-intro .weight {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--unit-color, var(--indigo));
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      min-width: 0;
+    }
+
+    details.card {
+      overflow: clip;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 4px 16px rgba(39, 42, 48, .045);
+    }
+
+    details.card[open] { box-shadow: var(--shadow); }
+
+    details.card[hidden] { display: none; }
+
+    details.card > summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 13px;
+      min-width: 0;
+      align-items: start;
+      padding: 20px 48px 17px 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    details.card > summary::-webkit-details-marker { display: none; }
+
+    details.card > summary > span:nth-child(2) { min-width: 0; }
+
+    details.card > summary::after {
+      content: "+";
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      display: grid;
+      width: 25px;
+      height: 25px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    details.card[open] > summary::after { content: "−"; }
+
+    .topic-code {
+      min-width: 46px;
+      padding: 4px 7px;
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--unit-color, var(--indigo)) 12%, white);
+      color: var(--unit-color, var(--indigo));
+      font-size: 11px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .topic-title {
+      display: block;
+      overflow-wrap: anywhere;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.18;
+    }
+
+    .topic-purpose {
+      display: block;
+      overflow-wrap: anywhere;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .card-body {
+      padding: 0 20px 20px;
+      border-top: 1px solid #ebe5d9;
+    }
+
+    .terms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 16px 0 12px;
+    }
+
+    .term {
+      padding: 4px 8px;
+      border: 1px solid #ddd5c6;
+      border-radius: 999px;
+      background: #f5f0e7;
+      color: #4f5963;
+      font-size: 10.5px;
+      font-weight: 750;
+    }
+
+    .keyword-label {
+      margin-top: 16px;
+      color: var(--unit-color, var(--indigo));
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .unit-glance-panel {
+      margin: 0 0 18px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 25%, var(--line));
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, .82);
+    }
+
+    .unit-glance-head {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--unit-color, var(--indigo)) 7%, white);
+    }
+
+    .unit-glance-head b {
+      color: var(--unit-color, var(--indigo));
+      font-family: ui-serif, Georgia, serif;
+      font-size: 16px;
+    }
+
+    .unit-glance-head span { color: var(--muted); font-size: 11px; }
+
+    .unit-glance-scroll { overflow-x: auto; }
+
+    .unit-glance-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: 11.5px;
+    }
+
+    .unit-glance-table th,
+    .unit-glance-table td {
+      padding: 10px 13px;
+      border-bottom: 1px solid #ebe5d9;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .unit-glance-table tr:last-child td { border-bottom: 0; }
+    .unit-glance-table th { color: var(--muted); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; }
+    .unit-glance-table td:first-child { color: var(--unit-color, var(--indigo)); font-weight: 900; }
+    .unit-glance-table td:nth-child(3) { text-align: center; }
+
+    .skill-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      padding: 3px 7px;
+      border-radius: 7px;
+      background: var(--indigo);
+      color: white;
+      font-size: 9.5px;
+      font-weight: 900;
+    }
+
+    .glance-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      align-items: center;
+      margin: 15px 0 0;
+      padding: 10px 12px;
+      border: 1px solid #e2dbce;
+      border-radius: 11px;
+      background: #faf7f0;
+      color: var(--muted);
+      font-size: 10.5px;
+    }
+
+    .glance-strip > b { color: var(--unit-color, var(--indigo)); text-transform: uppercase; letter-spacing: .07em; }
+
+    .unit-knowledge-map {
+      margin: 0 0 18px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 28%, var(--line));
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, .88);
+      box-shadow: 0 5px 18px rgba(39, 42, 48, .045);
+    }
+
+    .unit-knowledge-map > summary {
+      position: relative;
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 15px 48px 15px 18px;
+      cursor: pointer;
+      list-style: none;
+      background: color-mix(in srgb, var(--unit-color, var(--indigo)) 8%, white);
+    }
+
+    .unit-knowledge-map > summary::-webkit-details-marker,
+    .unit-tree-topic > summary::-webkit-details-marker { display: none; }
+
+    .unit-knowledge-map > summary::after {
+      content: "+";
+      position: absolute;
+      right: 17px;
+      top: 50%;
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      transform: translateY(-50%);
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 35%, var(--line));
+      border-radius: 50%;
+      color: var(--unit-color, var(--indigo));
+      font-weight: 900;
+    }
+
+    .unit-knowledge-map[open] > summary::after { content: "−"; }
+    .unit-knowledge-map > summary b { color: var(--unit-color, var(--indigo)); font-family: ui-serif, Georgia, serif; font-size: 17px; }
+    .unit-knowledge-map > summary span { color: var(--muted); font-size: 10.5px; }
+
+    .unit-tree-canvas {
+      display: grid;
+      grid-template-columns: minmax(150px, 195px) minmax(0, 1fr);
+      gap: 30px;
+      align-items: start;
+      padding: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .unit-tree-root {
+      position: sticky;
+      top: calc(var(--topbar-height) + var(--unit-index-height) + 18px);
+      display: grid;
+      min-height: 94px;
+      padding: 16px;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--unit-color, var(--indigo));
+      color: white;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .unit-tree-root::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 46px;
+      width: 30px;
+      border-top: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 38%, white);
+    }
+
+    .unit-tree-topics,
+    .unit-tree-ek-list {
+      position: relative;
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .unit-tree-topics { padding-left: 15px; }
+
+    .unit-tree-topics::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      bottom: 18px;
+      border-left: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 30%, white);
+    }
+
+    .unit-tree-topic {
+      position: relative;
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 22%, var(--line));
+      border-radius: 11px;
+      background: white;
+    }
+
+    .unit-tree-topic::before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 18px;
+      width: 15px;
+      border-top: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 30%, white);
+    }
+
+    .unit-tree-topic > summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 9px;
+      align-items: center;
+      padding: 10px 38px 10px 11px;
+      cursor: pointer;
+      color: #374150;
+      font-size: 11px;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    .unit-tree-topic > summary::after {
+      content: "+";
+      position: absolute;
+      right: 12px;
+      color: var(--unit-color, var(--indigo));
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .unit-tree-topic[open] > summary::after { content: "−"; }
+    .unit-tree-topic-code { color: var(--unit-color, var(--indigo)); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
+    .unit-tree-topic-count { color: var(--muted); font-size: 9.5px; font-weight: 650; white-space: nowrap; }
+
+    .unit-tree-ek-list {
+      gap: 10px;
+      padding: 2px 12px 13px 31px;
+      border-top: 1px solid #eee8dd;
+    }
+
+    .unit-tree-ek-list > li {
+      position: relative;
+      padding-top: 10px;
+      padding-left: 16px;
+      border-left: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 18%, white);
+    }
+
+    .unit-tree-ek-list > li::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 22px;
+      width: 14px;
+      border-top: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 18%, white);
+    }
+
+    .unit-tree-ek-node {
+      display: grid;
+      gap: 3px;
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--unit-color, var(--indigo)) 6%, white);
+    }
+
+    .unit-tree-ek-node b { color: var(--unit-color, var(--indigo)); font-size: 9.5px; letter-spacing: .03em; }
+    .unit-tree-ek-node span { color: #59636f; font-size: 9.5px; line-height: 1.35; }
+
+    .unit-tree-leaves {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 0 0 12px;
+    }
+
+    .unit-tree-concept {
+      padding: 6px 8px;
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 24%, var(--line));
+      border-radius: 8px;
+      background: white;
+      color: #35414b;
+      cursor: pointer;
+      font-size: 9.5px;
+      font-weight: 720;
+      line-height: 1.25;
+    }
+
+    .unit-tree-concept:hover,
+    .unit-tree-concept:focus-visible {
+      border-color: var(--unit-color, var(--indigo));
+      color: var(--unit-color, var(--indigo));
+      outline: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 14%, transparent);
+    }
+
+    .study-synthesis {
+      margin-top: 14px;
+      padding: 14px 15px;
+      border-left: 3px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 55%, white);
+      border-radius: 0 11px 11px 0;
+      background: color-mix(in srgb, var(--unit-color, var(--indigo)) 4%, white);
+    }
+
+    .study-synthesis h4,
+    .ced-ledger h4 {
+      margin: 0 0 9px;
+      color: var(--unit-color, var(--indigo));
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .ced-ledger {
+      margin-top: 17px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .block-heading,
+    .concept-section-head {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .block-heading h4,
+    .concept-section-head h4 { margin: 0; }
+    .block-heading > span { color: var(--muted); font-size: 9.5px; font-weight: 750; }
+
+    .lo-list { display: grid; gap: 8px; }
+
+    .lo-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      padding: 10px 11px;
+      border-radius: 10px;
+      background: #eef3fb;
+      color: #26374d;
+      font-size: 12px;
+    }
+
+    .code-badge,
+    .ek-code {
+      display: inline-flex;
+      width: max-content;
+      padding: 3px 6px;
+      border-radius: 6px;
+      background: var(--unit-color, var(--indigo));
+      color: white;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 9px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    details.ek-ledger {
+      margin-top: 12px;
+      overflow: hidden;
+      border: 1px solid #d7deea;
+      border-radius: 12px;
+      background: #fbfcfe;
+    }
+
+    details.ek-ledger > summary {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      cursor: pointer;
+      color: #253b65;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      list-style: none;
+      text-transform: uppercase;
+    }
+
+    details.ek-ledger > summary::-webkit-details-marker { display: none; }
+    details.ek-ledger > summary::after { content: "+"; font-size: 16px; }
+    details.ek-ledger[open] > summary::after { content: "−"; }
+
+    .ek-count {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 750;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .card .ek-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card .ek-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 9px;
+      margin: 0;
+      padding: 10px 11px;
+      border: 1px solid #e5e9f0;
+      border-radius: 9px;
+      background: white;
+      color: #303b48;
+      font-size: 11.5px;
+    }
+
+    .ek-text { min-width: 0; }
+
+    mark.ek-keyword {
+      padding: .06em .2em;
+      border-radius: .28em;
+      background: #ffe79c;
+      color: #3d3213;
+      font-weight: 850;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .ek-exclusion {
+      display: block;
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-left: 3px solid var(--coral);
+      background: #fff5f0;
+      color: #71483e;
+      font-size: 10.5px;
+    }
+
+    .no-ek {
+      margin: 0;
+      padding: 11px 12px;
+      border: 1px dashed #d0c8b9;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    details.inner-disclosure > summary {
+      position: relative;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    details.inner-disclosure > summary::-webkit-details-marker { display: none; }
+    details.inner-disclosure > summary::after {
+      content: "+";
+      position: absolute;
+      right: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      opacity: .65;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    details.inner-disclosure[open] > summary::after { content: "−"; }
+    details.ced-ledger > .block-heading { margin: 0; padding: 14px 44px 13px 0; color: var(--unit-color, var(--indigo)); }
+    details.ced-ledger > .ek-list,
+    details.ced-ledger > .no-ek { margin-bottom: 3px; }
+
+    .practice-skill-list { display: grid; gap: 10px; margin-top: 14px; }
+
+    .practice-skill {
+      padding: 13px 14px;
+      border: 1px solid #d9dfeb;
+      border-radius: 11px;
+      background: #f7f9fd;
+    }
+
+    .practice-skill-head { display: grid; grid-template-columns: auto 1fr; gap: 9px; align-items: start; }
+    .practice-skill-head b { color: #273c67; font-size: 12px; }
+    .practice-skill ul { margin-top: 9px; font-size: 11.5px; }
+
+    .unit-zero-note {
+      margin: -4px 0 18px;
+      padding: 11px 14px;
+      border: 1px solid #d4dced;
+      border-radius: 12px;
+      background: #f4f7fc;
+      color: #40506e;
+      font-size: 11.5px;
+    }
+
+    .subsection-head {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin: 30px 0 13px;
+    }
+
+    .subsection-head h3 {
+      margin: 0;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 24px;
+    }
+
+    .subsection-head span { color: var(--muted); font-size: 11px; }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .research-card {
+      min-width: 0;
+      padding: 17px 18px;
+      border: 1px solid #c9d8cc;
+      border-top: 4px solid var(--sage);
+      border-radius: 14px;
+      background: #f2f8f3;
+      box-shadow: 0 4px 16px rgba(39, 42, 48, .04);
+    }
+
+    .research-card h4 {
+      margin: 7px 0 8px;
+      color: #174f49;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .research-card p,
+    .research-card li { color: #304940; font-size: 12px; }
+    .research-card ul { margin: 9px 0 0; padding-left: 18px; }
+    .research-card li + li { margin-top: 7px; }
+
+    .skill-map {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-map span {
+      padding: 3px 7px;
+      border-radius: 7px;
+      background: #dcebe0;
+      color: #205b54;
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .research-source {
+      display: inline-block;
+      margin-top: 12px;
+      color: #276b63;
+      font-size: 10.5px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .research-source:hover { text-decoration: underline; }
+
+    .card ul {
+      margin: 0;
+      padding-left: 19px;
+      color: #313a44;
+      font-size: 13px;
+    }
+
+    .card li + li { margin-top: 8px; }
+
+    .card strong { color: #1a2c54; }
+
+    .barron-note {
+      margin-top: 17px;
+      padding: 15px 16px 14px;
+      border: 1px solid #c9d8cc;
+      border-left: 4px solid var(--sage);
+      border-radius: 4px 14px 14px 4px;
+      background: #f0f7f2;
+    }
+
+    .barron-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .barron-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #1e665d;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .barron-label::before {
+      content: "B";
+      display: grid;
+      width: 21px;
+      height: 21px;
+      place-items: center;
+      border-radius: 6px;
+      background: var(--sage);
+      color: white;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 12px;
+    }
+
+    .barron-link {
+      color: #276b63;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .barron-link:hover { text-decoration: underline; }
+
+    .barron-scope-note {
+      margin: 0 0 10px;
+      color: #5b6f65;
+      font-size: 10.5px;
+      font-style: italic;
+    }
+
+    .barron-note ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #304940;
+      font-size: 12.5px;
+    }
+
+    .barron-note li + li { margin-top: 7px; }
+
+    .concept-section {
+      margin-top: 17px;
+      overflow: hidden;
+      border: 1px solid #bcd1c1;
+      border-radius: 14px;
+      background: #f7fbf8;
+    }
+
+    .concept-section-head {
+      margin: 0;
+      padding: 14px 46px 13px 14px;
+      color: #1e665d;
+    }
+
+    .concept-section[open] > .concept-section-head { border-bottom: 1px solid #dce7de; }
+
+    .concept-section-head h4 {
+      color: #1e665d;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .concept-count {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 750;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+      padding: 12px 14px 14px;
+    }
+
+    .unit0-concepts { margin-top: 18px; }
+    .unit0-concepts .concept-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .barron-extra-concepts {
+      margin-top: 14px;
+      border-color: #bfd2c4;
+      background: rgba(255,255,255,.55);
+    }
+
+    .barron-extra-concepts .concept-section-head { border-bottom-color: #d5e2d8; }
+
+    .concept-entry {
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #dce7de;
+      border-radius: 11px;
+      background: white;
+      scroll-margin-top: calc(var(--topbar-height) + var(--unit-index-height) + 18px);
+    }
+
+    .search-match {
+      outline: 3px solid rgba(239, 122, 89, .38);
+      outline-offset: 2px;
+      background: #fff9e8 !important;
+    }
+
+    .search-current {
+      outline-color: var(--coral);
+      box-shadow: 0 0 0 6px rgba(239, 122, 89, .13);
+    }
+
+    .topic-mindmap {
+      margin-top: 14px;
+      padding: 14px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 24%, var(--line));
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--unit-color, var(--indigo)) 3%, white);
+    }
+
+    .topic-mindmap-head {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .topic-mindmap-head h4 { margin: 0; color: var(--unit-color, var(--indigo)); font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; }
+    .topic-mindmap-head span { color: var(--muted); font-size: 9.5px; }
+
+    .mindmap-layout {
+      display: grid;
+      grid-template-columns: minmax(130px, 180px) minmax(0, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .mindmap-root {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 72px;
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--unit-color, var(--indigo));
+      color: white;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .mindmap-root::after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: 22px;
+      border-top: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 42%, white);
+    }
+
+    .mindmap-nodes {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-content: center;
+      padding-left: 12px;
+    }
+
+    .mindmap-nodes::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      bottom: 7px;
+      border-left: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 32%, white);
+    }
+
+    .mindmap-node {
+      position: relative;
+      padding: 7px 9px;
+      border: 1px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 26%, var(--line));
+      border-radius: 9px;
+      background: white;
+      color: #374150;
+      cursor: pointer;
+      font-size: 10.5px;
+      font-weight: 750;
+      line-height: 1.25;
+    }
+
+    .mindmap-node:hover,
+    .mindmap-node:focus-visible { border-color: var(--unit-color, var(--indigo)); color: var(--unit-color, var(--indigo)); outline: 2px solid color-mix(in srgb, var(--unit-color, var(--indigo)) 16%, transparent); }
+
+    .concept-entry h5 {
+      margin: 0 0 9px;
+      color: #184f48;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .concept-entry p {
+      margin: 7px 0 0;
+      color: #37473f;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+
+    .concept-entry p b {
+      color: #22665e;
+      font-size: 9px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .concept-quiz {
+      margin-top: 12px;
+      overflow: hidden;
+      border: 1px solid #d8dff0;
+      border-radius: 10px;
+      background: #f8faff;
+    }
+
+    .concept-quiz > summary {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 11px;
+      color: #29467f;
+      cursor: pointer;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      list-style: none;
+      text-transform: uppercase;
+    }
+
+    .concept-quiz > summary::-webkit-details-marker { display: none; }
+    .concept-quiz > summary::after { content: "+"; font-size: 15px; }
+    .concept-quiz[open] > summary::after { content: "−"; }
+    .concept-quiz > summary span:last-of-type { margin-left: auto; color: var(--muted); font-size: 8.5px; letter-spacing: 0; text-transform: none; }
+
+    .concept-quiz-form {
+      padding: 11px;
+      border-top: 1px solid #e0e5f1;
+    }
+
+    .quiz-source-note {
+      margin: 0 0 8px !important;
+      color: #68738a !important;
+      font-size: 9px !important;
+    }
+
+    .quiz-stem {
+      margin: 0 0 9px !important;
+      color: #25344e !important;
+      font-size: 11px !important;
+    }
+
+    .quiz-options { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; }
+    .quiz-options legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+    .quiz-option {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 7px 8px;
+      border: 1px solid #dfe4ef;
+      border-radius: 8px;
+      background: white;
+      color: #344158;
+      cursor: pointer;
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .quiz-option:hover { border-color: #8ea3cf; }
+    .quiz-option input { margin: 2px 0 0; accent-color: var(--indigo); }
+    .quiz-option.is-correct { border-color: #5a9b7d; background: #eef8f2; color: #21553f; }
+    .quiz-option.is-wrong { border-color: #d68a80; background: #fff3f0; color: #783b34; }
+
+    .quiz-actions { display: flex; gap: 9px; align-items: center; margin-top: 9px; }
+    .quiz-check {
+      padding: 7px 11px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--indigo);
+      color: white;
+      cursor: pointer;
+      font-size: 9.5px;
+      font-weight: 850;
+    }
+    .quiz-check:hover, .quiz-check:focus-visible { background: var(--indigo-2); outline: 2px solid rgba(54,88,167,.2); outline-offset: 2px; }
+    .quiz-feedback { flex: 1; margin: 0 !important; color: #37475f !important; font-size: 9.5px !important; }
+
+    .comparison-section {
+      margin-top: 17px;
+      overflow: hidden;
+      border: 1px solid #d7c9e7;
+      border-left: 4px solid var(--violet);
+      border-radius: 4px 14px 14px 4px;
+      background: #faf7fd;
+    }
+
+    .comparison-section > summary {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 44px 13px 14px;
+      color: #573c82;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .comparison-section > summary::-webkit-details-marker { display: none; }
+    .comparison-section > summary h4 { margin: 0; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; }
+    .comparison-section > summary span { margin-left: auto; color: var(--muted); font-size: 9.5px; }
+    .comparison-section-body { display: grid; gap: 14px; padding: 0 14px 15px; border-top: 1px solid #e7def0; }
+
+    .comparison-group { min-width: 0; padding-top: 13px; }
+    .comparison-group h5 { margin: 0 0 7px; color: #604889; font-family: ui-serif, Georgia, serif; font-size: 14px; }
+    .comparison-table-wrap { overflow-x: auto; border: 1px solid #e2d9ec; border-radius: 10px; background: white; }
+    .comparison-table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: 10px; line-height: 1.4; }
+    .comparison-table th, .comparison-table td { padding: 9px 10px; border-bottom: 1px solid #eee8f3; text-align: left; vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: 0; }
+    .comparison-table th { background: #f2edf8; color: #584079; font-size: 8.5px; letter-spacing: .06em; text-transform: uppercase; }
+    .comparison-table td:first-child { width: 20%; color: #4f3778; font-weight: 850; }
+    .comparison-table td:nth-child(2) { width: 39%; }
+    .comparison-table td:nth-child(3) { color: #4f5b55; }
+
+    .concept-source-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .concept-source {
+      color: #276b63;
+      font-size: 10px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .concept-source:hover { text-decoration: underline; }
+
+    .context-badge {
+      padding: 3px 6px;
+      border-radius: 6px;
+      background: #f6ebd3;
+      color: #72551d;
+      font-size: 8.5px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .concept-inline-figures {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .concept-inline-figure {
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #cfd8d1;
+      border-radius: 11px;
+      background: #f8fbf9;
+    }
+
+    .concept-inline-figure a { display: block; background: white; }
+
+    .concept-inline-figure img {
+      display: block;
+      width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+      background: white;
+    }
+
+    .concept-inline-figure figcaption {
+      padding: 10px 11px 11px;
+      border-top: 1px solid #e3e8e4;
+      color: #385149;
+      font-size: 10.5px;
+      line-height: 1.45;
+    }
+
+    .concept-inline-figure figcaption b { color: #174f49; }
+
+    .figure-attribution {
+      display: block;
+      margin-top: 8px;
+      color: #596d69;
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+
+    .figure-attribution a {
+      color: #236f68;
+      font-weight: 750;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .figure-scope { display: block; margin-top: 5px; color: #6a5b41; }
+
+    .card-footer {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 17px;
+      padding-top: 13px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .source-link {
+      color: var(--unit-color, var(--indigo));
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .source-link:hover { text-decoration: underline; }
+
+    .hosted-source-ref {
+      cursor: help;
+      text-decoration: none;
+    }
+
+    .concept-inline-figure > .hosted-source-ref {
+      display: block;
+      background: white;
+    }
+
+    .scope {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .scope::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    .exam-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .exam-card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 4px 16px rgba(39, 42, 48, .045);
+    }
+
+    .exam-card.wide { grid-column: span 2; }
+
+    .exam-card h3 {
+      margin: 0 0 12px;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 21px;
+    }
+
+    .exam-card p,
+    .exam-card li { color: #3d4650; font-size: 13px; }
+
+    .exam-card ul,
+    .exam-card ol { margin: 10px 0 0; padding-left: 20px; }
+
+    .exam-card li + li { margin-top: 7px; }
+
+    .scoreline {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .scorebar {
+      height: 9px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: #e6e0d5;
+    }
+
+    .scorebar i {
+      display: block;
+      height: 100%;
+      width: var(--pct);
+      border-radius: inherit;
+      background: var(--indigo-2);
+    }
+
+    .scoreline b { font-size: 12px; }
+
+    .verb-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    .verb {
+      padding: 11px;
+      border-radius: 12px;
+      background: #f1ede4;
+      color: #424b54;
+      font-size: 12px;
+    }
+
+    .verb b { display: block; color: var(--indigo); }
+
+    .boundary-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .boundary-list li {
+      padding: 14px 16px;
+      border-left: 4px solid var(--coral);
+      border-radius: 0 12px 12px 0;
+      background: #fff8f2;
+      color: #4b4b49;
+      font-size: 12px;
+    }
+
+    .page-directory {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .page-link-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+      min-height: 104px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--page-color, var(--indigo));
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.76);
+      color: inherit;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .page-link-card:hover,
+    .page-link-card:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      outline: 3px solid rgba(54, 88, 167, .15);
+      outline-offset: 2px;
+    }
+
+    .page-link-number {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--page-color, var(--indigo));
+      color: white;
+      font-weight: 900;
+    }
+
+    .page-link-card b { display: block; color: var(--indigo); font-size: 15px; }
+    .page-link-card small { display: block; margin-top: 5px; color: var(--muted); line-height: 1.45; }
+    .page-link-arrow { color: var(--page-color, var(--indigo)); font-size: 20px; font-weight: 900; }
+
+    .no-results {
+      display: none;
+      margin-top: 36px;
+      padding: 38px;
+      border: 1px dashed #b8af9f;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.42);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .no-results.show { display: block; }
+
+    .page-footer {
+      margin-top: 80px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .floating-back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 60;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      background: var(--indigo);
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(33, 58, 122, .25);
+    }
+
+    .floating-back-top:hover,
+    .floating-back-top:focus-visible {
+      background: var(--indigo-2);
+      outline: 3px solid rgba(54, 88, 167, .22);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 950px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { display: none; }
+      main { margin: 0 auto; }
+      .cards, .research-grid { grid-template-columns: 1fr; }
+      .unit0-concepts .concept-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .exam-grid { grid-template-columns: 1fr 1fr; }
+      .exam-card.wide { grid-column: span 2; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar { padding: 10px 14px; }
+      .unit-index { padding-inline: 14px; }
+      .unit-index-label { display: none; }
+      .brand span:last-child, .result-count, .shortcut { display: none; }
+      .search-step { display: none; }
+      #search { padding-right: 14px; }
+      main { padding: 28px 14px 70px; }
+      .page-directory { grid-template-columns: 1fr; }
+      .mindmap-layout { grid-template-columns: 1fr; gap: 10px; }
+      .mindmap-root { min-height: auto; }
+      .mindmap-root::after, .mindmap-nodes::before { display: none; }
+      .mindmap-nodes { padding-left: 0; }
+      .unit-tree-canvas { grid-template-columns: 1fr; gap: 13px; }
+      .unit-tree-root { position: relative; top: auto; min-height: 64px; }
+      .unit-tree-root::after { display: none; }
+      .unit-tree-topics { padding-left: 0; }
+      .unit-tree-topics::before, .unit-tree-topic::before { display: none; }
+      .hero { padding: 30px 24px; border-radius: 22px; }
+      .hero::after { right: -180px; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .section-head { grid-template-columns: 1fr; }
+      .section-meta { text-align: left; }
+      .unit-intro { grid-template-columns: 66px 1fr; gap: 15px; }
+      .unit-number { width: 62px; height: 62px; font-size: 32px; }
+      details.card > summary { grid-template-columns: auto 1fr; }
+      .unit-glance-head { align-items: flex-start; flex-direction: column; gap: 3px; }
+      .lo-item, .card .ek-item { grid-template-columns: 1fr; }
+      .exam-grid { grid-template-columns: 1fr; }
+      .exam-card.wide { grid-column: auto; }
+      .boundary-list, .verb-grid { grid-template-columns: 1fr; }
+      .barron-head { align-items: flex-start; flex-direction: column; }
+      .barron-link { white-space: normal; }
+      .concept-inline-figures { grid-template-columns: 1fr; }
+      .block-heading, .concept-section-head { align-items: flex-start; flex-direction: column; gap: 3px; }
+      .comparison-section > summary { align-items: flex-start; flex-direction: column; gap: 3px; }
+      .comparison-section > summary span { margin-left: 0; }
+      .quiz-actions { align-items: flex-start; flex-direction: column; }
+      .subsection-head { align-items: flex-start; flex-direction: column; gap: 3px; }
+      .floating-back-top { right: 14px; bottom: 14px; width: 46px; height: 46px; justify-content: center; padding: 0; }
+      .floating-back-top span:last-child { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    }
+
+    @media print {
+      body { background: white; }
+      .topbar, .unit-index, aside, .filters, .floating-back-top { display: none !important; }
+      .shell { display: block; }
+      main { width: 100%; padding: 0; }
+      .hero { color: black; background: white; border: 2px solid black; box-shadow: none; }
+      .hero-copy, .stat span { color: #333; }
+      .stat { border-color: #aaa; }
+      .content-section { break-before: page; }
+      details.card { break-inside: avoid; box-shadow: none; }
+      details.card:not([open]) > .card-body { display: block; }
+      .cards, .exam-grid, .research-grid { display: block; }
+      .card, .exam-card, .research-card, .concept-entry, .concept-inline-figure { margin-bottom: 12px; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body data-page="unit3">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="topbar" id="top">
+    <div class="brand"><span class="brand-mark">Ψ</span><span>2026 AP Psych CED</span></div>
+    <div class="search-wrap">
+      <label for="search" class="sr-only" style="position:absolute;left:-10000px">Search the wiki</label>
+      <input id="search" type="search" autocomplete="off" placeholder="Search concepts, theories, disorders, skills…">
+      <span class="shortcut">/</span>
+      <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Wiki search suggestions" hidden></div>
+    </div>
+    <div class="search-status">
+      <div class="result-count" id="resultCount" aria-live="polite">Loading…</div>
+      <button class="search-step" id="previousMatch" type="button" aria-label="Previous search match" disabled>↑</button>
+      <button class="search-step" id="nextMatch" type="button" aria-label="Next search match" disabled>↓</button>
+    </div>
+  </header>
+
+  <nav class="unit-index" aria-label="Frozen unit index">
+    <span class="unit-index-label">Pages</span>
+    <a href="index.html" data-page-link="home">Overview</a>
+    <a href="unit-0.html" data-page-link="unit0">Unit 0</a>
+    <a href="unit-1.html" data-page-link="unit1">Unit 1</a>
+    <a href="unit-2.html" data-page-link="unit2">Unit 2</a>
+    <a href="unit-3.html" data-page-link="unit3">Unit 3</a>
+    <a href="unit-4.html" data-page-link="unit4">Unit 4</a>
+    <a href="unit-5.html" data-page-link="unit5">Unit 5</a>
+    <a href="exam.html" data-page-link="exam">Exam</a>
+    <a href="boundaries.html" data-page-link="boundaries">Boundaries</a>
+  </nav>
+
+  <div class="shell">
+    <aside aria-label="Wiki navigation">
+      <p class="eyebrow">Local study wiki</p>
+      <h2 class="side-title">Course map</h2>
+      <nav class="toc">
+        <a href="index.html" data-page-link="home"><span class="toc-num">00</span>Overview</a>
+        <a href="unit-0.html" data-page-link="unit0"><span class="toc-num">U0</span>Unit 0 · Science Practices</a>
+        <p class="nav-label">Course units</p>
+        <a href="unit-1.html" data-page-link="unit1"><span class="toc-num">01</span>Biological Bases</a>
+        <a href="unit-2.html" data-page-link="unit2"><span class="toc-num">02</span>Cognition</a>
+        <a href="unit-3.html" data-page-link="unit3"><span class="toc-num">03</span>Development + Learning</a>
+        <a href="unit-4.html" data-page-link="unit4"><span class="toc-num">04</span>Social + Personality</a>
+        <a href="unit-5.html" data-page-link="unit5"><span class="toc-num">05</span>Mental + Physical Health</a>
+        <p class="nav-label">Assessment</p>
+        <a href="exam.html" data-page-link="exam"><span class="toc-num">EX</span>Exam Playbook</a>
+        <a href="boundaries.html" data-page-link="boundaries"><span class="toc-num">↗</span>CED Boundaries</a>
+      </nav>
+      <div class="source-note">
+        Built from the CED Science Practices, all five Unit-at-a-Glance tables, 83 learning objectives, and 282 coded Essential Knowledge statements. The course topics contain 763 CED-derived concepts with definitions and scenario examples, plus 65 Unit 0 research concepts, 4 separately labeled Barron-only concepts, 21 Barron figures, 29 Myers figures, and 9 open-license web figures mapped to related concepts.
+      </div>
+    </aside>
+
+    <main id="content">
+      <section class="hero" id="overview">
+        <p class="eyebrow">Concept-first · source-linked · offline</p>
+        <h1>2026 AP Psych CED</h1>
+        <p class="hero-copy">A searchable, page-by-page field guide built from the official Science Practices and Unit-at-a-Glance syllabus, enriched with CED-aligned explanations and visual study aids from Barron, Myers, and attributed open-license sources.</p>
+        <div class="stats" aria-label="Course summary">
+          <div class="stat"><b>5</b><span>equally weighted units</span></div>
+          <div class="stat"><b>35</b><span>required topics</span></div>
+          <div class="stat"><b>83</b><span>learning objectives</span></div>
+          <div class="stat"><b>282</b><span>essential-knowledge statements</span></div>
+        </div>
+      </section>
+
+      <div class="filters" aria-label="Filter content" hidden>
+        <button class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="unit0" aria-pressed="false">Unit 0</button>
+        <button class="filter" data-filter="unit1" aria-pressed="false">Unit 1</button>
+        <button class="filter" data-filter="unit2" aria-pressed="false">Unit 2</button>
+        <button class="filter" data-filter="unit3" aria-pressed="false">Unit 3</button>
+        <button class="filter" data-filter="unit4" aria-pressed="false">Unit 4</button>
+        <button class="filter" data-filter="unit5" aria-pressed="false">Unit 5</button>
+        <button class="filter" data-filter="exam" aria-pressed="false">Exam</button>
+        <button class="filter" data-filter="boundaries" aria-pressed="false">Out of scope</button>
+      </div>
+
+      <div id="wiki"></div>
+      <div class="no-results" id="noResults">
+        <strong>No match on this page.</strong><br>Choose a wiki-wide suggestion beneath the search box, or try a broader term such as “conditioning.”
+      </div>
+
+      <footer class="page-footer">
+        This is an independent study aid, not an official College Board, Barron’s, Myers, 5 Steps, or Princeton Review publication. The complete CED ledger preserves the supplied document’s coded objectives and essential knowledge; textbook material is aligned to that framework. Beginner MCQs are original, simplified adaptations informed by the supplied workbook and review-book question styles rather than copied answer keys. Open-license web images retain creator and license attribution in their captions. Clinical labels are for exam study only and must not be used to diagnose yourself or others.
+      </footer>
+    </main>
+  </div>
+
+  <button class="floating-back-top" id="backToTop" type="button" aria-label="Back to top"><span aria-hidden="true">↑</span><span>Back to top</span></button>
+
+  <script src="./ced-details.js"></script>
+  <script src="./barron-concepts.js"></script>
+  <script src="./myers-figures.js"></script>
+  <script src="./web-figures.js"></script>
+  <script src="./real-life-examples.js"></script>
+  <script src="./scenario-examples.js"></script>
+  <script src="./comparison-groups.js"></script>
+  <script>
+    const cedFramework = window.cedDetails;
+    const cedConcepts = window.cedConcepts || {};
+    const barronExtraConcepts = window.barronExtraConcepts || {};
+    const myersFigures = window.myersFigures || {};
+    const webFigures = window.webFigures || {};
+    const realLifeExamples = window.realLifeExamples || {};
+    const scenarioExamples = window.scenarioExamples || {};
+    const comparisonGroups = window.comparisonGroups || {};
+    const isHostedBuild = /^https?:$/.test(window.location.protocol);
+    const pdfBase = new URL("../../AP Psychology/Psychology 以上全部资料打包/ap-psychology-course-and-exam-description.pdf", window.location.href).href;
+    const barronBase = new URL("../../AP Psychology/Psychology 以上全部资料打包/Psychology Barron(2026)/AP Psychology Premium, 2026 - Barron's Educational Series.pdf", window.location.href).href;
+    const myersBase = new URL("./Myers/.synto/working/MYERS Psychology for the AP Course OCR-final.pdf", window.location.href).href;
+    const sourcePageUrl = (base, page) => {
+      const url = new URL(base);
+      url.hash = `page=${page}&zoom=page-width`;
+      return url.href;
+    };
+    const cedPage = page => sourcePageUrl(pdfBase, page);
+    const barronPage = page => sourcePageUrl(barronBase, page);
+    const myersPage = page => sourcePageUrl(myersBase, page);
+    const figurePage = figure => figure.pageUrl || (figure.source === "Myers" ? myersPage(figure.page) : barronPage(figure.page));
+    const figureOpenTitle = figure => figure.pageUrl
+      ? `Open the source page for ${figure.title}`
+      : `Open ${figure.figure} in ${figure.source || "Barron"} at PDF page ${figure.page}`;
+
+    function adaptHostedSourceLinks(root) {
+      if (!isHostedBuild) return;
+      const unpublishedPdfBases = [pdfBase, barronBase, myersBase].map(url => url.split("#")[0]);
+      root.querySelectorAll("a[href]").forEach(anchor => {
+        const href = anchor.href.split("#")[0];
+        if (!unpublishedPdfBases.includes(href)) return;
+        const replacement = document.createElement("span");
+        replacement.className = `${anchor.className} hosted-source-ref`.trim();
+        replacement.title = "The hosted study wiki retains the page reference, but the local source PDF is not published.";
+        while (anchor.firstChild) replacement.appendChild(anchor.firstChild);
+        if (!replacement.querySelector("img")) replacement.textContent = replacement.textContent.replace(/\s*↗\s*$/, "") + " · local PDF";
+        anchor.replaceWith(replacement);
+      });
+    }
+
+    const practices = [
+      {
+        code: "1", title: "Concept Application", purpose: "Apply psychological perspectives, theories, concepts, and research findings.",
+        terms: ["scenario", "perspectives", "culture", "bias"], pages: [21, 22], ced: "14-15",
+        bullets: [
+          "Apply a concept to a scenario, compare explanations from the <strong>biological, behavioral, cognitive, evolutionary, humanistic, psychodynamic, and sociocultural</strong> perspectives, and draw objective conclusions.",
+          "Explain how <strong>cultural norms, expectations, and circumstances</strong> shape behavior and mental processes.",
+          "Recognize <strong>confirmation bias, hindsight bias, and overconfidence</strong>, plus the harm caused by inappropriate or discriminatory applications of psychology."
+        ]
+      },
+      {
+        code: "2", title: "Research Methods and Design", purpose: "Evaluate qualitative and quantitative methods, designs, samples, and ethics.",
+        terms: ["experiment", "correlation", "sampling", "ethics", "variables"], pages: [21, 24], ced: "14-17",
+        bullets: [
+          "Distinguish <strong>experiments</strong> (manipulated IV + random assignment) from <strong>nonexperimental</strong> methods: case study, correlation, meta-analysis, and naturalistic observation.",
+          "Evaluate falsifiable hypotheses, operational definitions, IVs, DVs, confounds, experimental/control groups, placebos, single/double blinding, and qualitative versus quantitative measures.",
+          "Connect <strong>population, sample, random or convenience sampling, representation, sampling bias, and generalizability</strong>. Random sampling supports generalization; random assignment supports causal inference.",
+          "In correlation and surveys, check directionality, third variables, wording, self-report bias, and social desirability. Correlation does not establish causation.",
+          "Ethics checklist: institutional review, informed consent/assent, protection from harm, confidentiality/anonymity, justified deception, and debriefing."
+        ]
+      },
+      {
+        code: "3", title: "Data Interpretation", purpose: "Read quantitative and qualitative evidence in tables, graphs, charts, figures, and diagrams.",
+        terms: ["mean", "standard deviation", "normal curve", "effect size", "significance"], pages: [21, 22], ced: "14-15",
+        bullets: [
+          "Identify variables and the statistical or psychological concepts represented in data.",
+          "Calculate and interpret <strong>mean, median, mode, range, standard deviation, percentile rank</strong>; read normal curves, skew, bimodal distributions, and regression toward the mean.",
+          "Describe trends and relationships, including scatterplots and the <strong>correlation coefficient</strong>.",
+          "Interpret <strong>effect size</strong> as strength or magnitude (about ≤ .2 small, .3-.7 medium, ≥ .8 large) and <strong>statistical significance</strong> as results unlikely due to chance."
+        ]
+      },
+      {
+        code: "4", title: "Argumentation", purpose: "Develop and justify psychological arguments using scientific evidence.",
+        terms: ["claim", "evidence", "reasoning", "support", "refute"], pages: [21, 22], ced: "14-15",
+        bullets: [
+          "Propose a <strong>defensible, specific claim</strong> that answers the question.",
+          "Use scientifically derived evidence to <strong>support, refute, or modify</strong> a claim, policy, or norm.",
+          "Explain the reasoning link: how and why the evidence makes the claim more or less defensible, including relevant nuance."
+        ]
+      }
+    ];
+
+    const units = [
+      {
+        id: "unit1", number: 1, title: "Biological Bases of Behavior", color: "#3658a7", pages: "PDF 34-53 · CED 27-46", intro: "Behavior and mental processes emerge from interacting genetic, environmental, neural, brain, sleep, and sensory systems.",
+        topics: [
+          { code:"1.1", title:"Interaction of Heredity and Environment", purpose:"Explain how nature and nurture jointly shape behavior and mental processes.", pages:[41,41], ced:"34", terms:["heredity","environment","nature","nurture","evolution","eugenics","twin studies"], bullets:[
+            "<strong>Heredity (nature)</strong> means genetic or predisposed traits; <strong>environment (nurture)</strong> means external experience. The CED emphasizes their interaction, not an either/or answer.",
+            "The <strong>evolutionary perspective</strong> examines how natural selection can favor behavior and mental processes that increase survival and reproductive success; eugenics is a discriminatory misuse of evolutionary ideas.",
+            "Twin, family, and adoption studies help estimate genetic and environmental influence. Exact genotype/phenotype, DNA, chromosome, and dominance details are out of scope."
+          ]},
+          { code:"1.2", title:"Overview of the Nervous System", purpose:"Differentiate the major nervous-system divisions and their functions.", pages:[42,42], ced:"35", terms:["CNS","PNS","autonomic","somatic","sympathetic","parasympathetic"], bullets:[
+            "The <strong>central nervous system</strong> is the brain and spinal cord; it coordinates bodily processes.",
+            "The <strong>peripheral nervous system</strong> connects the CNS to the body. Its <strong>somatic</strong> division controls voluntary processes; its <strong>autonomic</strong> division controls involuntary processes.",
+            "The autonomic system contains the <strong>sympathetic</strong> and <strong>parasympathetic</strong> divisions, which mobilize and calm bodily activity."
+          ]},
+          { code:"1.3", title:"The Neuron and Neural Firing", purpose:"Connect neural structure, transmission, chemicals, and psychoactive drugs to behavior.", pages:[43,45], ced:"36-38", terms:["neuron","glia","reflex arc","action potential","neurotransmitter","agonist","antagonist","drugs"], bullets:[
+            "<strong>Neurons</strong> transmit information; <strong>glial cells</strong> provide structure, insulation, communication, and waste transport. A reflex arc links sensory neurons, interneurons, and motor neurons.",
+            "Neural transmission uses threshold, resting potential, depolarization, the all-or-none principle, refractory period, and reuptake. Disruption can relate to multiple sclerosis or myasthenia gravis.",
+            "In-scope neurotransmitters: <strong>dopamine, serotonin, norepinephrine, glutamate, GABA, endorphins, substance P, acetylcholine</strong>. In-scope hormones: <strong>adrenaline, leptin, ghrelin, melatonin, oxytocin</strong>.",
+            "Drugs may act as <strong>agonists, antagonists, or reuptake inhibitors</strong>. Know stimulant, depressant, hallucinogen, and opioid effects, plus tolerance, addiction, and withdrawal."
+          ]},
+          { code:"1.4", title:"The Brain", purpose:"Map major structures, lateralization, plasticity, and research methods to function.", pages:[46,47], ced:"39-40", terms:["brainstem","medulla","RAS","cerebellum","limbic","lobes","Broca","Wernicke","plasticity","EEG","fMRI"], bullets:[
+            "<strong>Brainstem/medulla</strong>: breathing and heart rate. <strong>Reticular activating system and reward center</strong>: alertness, some movement, learning, cognition, and emotion. <strong>Cerebellum</strong>: balance, coordination, procedural learning.",
+            "The cortex includes two hemispheres, the corpus callosum, limbic structures (thalamus, hypothalamus, pituitary, hippocampus, amygdala), and four lobes.",
+            "<strong>Occipital</strong>: vision. <strong>Temporal</strong>: auditory/language. <strong>Parietal</strong>: association and somatosensory processing. <strong>Frontal/prefrontal</strong>: language, higher-order thinking, executive function; motor cortex controls skeletal movement.",
+            "Split-brain work reveals lateralization and contralateral organization. Language is typically left-lateralized: <strong>Broca</strong> production, <strong>Wernicke</strong> comprehension; damage can cause aphasia.",
+            "<strong>Plasticity</strong> allows rewiring. Brain research uses EEG, fMRI, case studies, lesioning, and other surgical evidence."
+          ]},
+          { code:"1.5", title:"Sleep", purpose:"Explain consciousness, sleep architecture, dreams, functions, and disorders.", pages:[48,49], ced:"41-42", terms:["circadian","NREM","REM","REM rebound","dreams","insomnia","narcolepsy","sleep apnea"], bullets:[
+            "Sleep and wakefulness are states of consciousness. The roughly 24-hour <strong>circadian rhythm</strong> can be disrupted by jet lag and shift work.",
+            "EEG patterns define stages: <strong>NREM 1-3</strong> decreases across the night; hypnagogic sensations occur entering NREM 1. <strong>REM</strong> is paradoxical, dream-rich, and more frequent later; deprivation can produce REM rebound.",
+            "Dream accounts in scope are <strong>activation-synthesis</strong> and <strong>consolidation</strong>. Sleep itself may consolidate memory and restore depleted resources.",
+            "Know insomnia, narcolepsy, REM sleep behavior disorder, sleep apnea, and somnambulism, and connect disrupted sleep to waking performance and health."
+          ]},
+          { code:"1.6", title:"Sensation", purpose:"Trace transduction and the visual, auditory, chemical, touch, pain, balance, and movement systems.", pages:[50,53], ced:"43-46", terms:["threshold","transduction","Weber","adaptation","retina","rods","cones","pitch","olfaction","gustation","pain","vestibular","kinesthesis"], bullets:[
+            "<strong>Sensation</strong> detects threshold-level stimuli and transduces them into neural messages; <strong>perception</strong> processes them. Absolute threshold = detection 50% of the time. Also know JND, Weber’s law, sensory adaptation, interaction, and synesthesia.",
+            "Vision: retina, blind spot, accommodation, rods, cones, fovea, trichromatic and opponent-process color theories, afterimages, color deficiency, prosopagnosia, and blindsight.",
+            "Hearing: wavelength/pitch, amplitude/loudness, place/volley/frequency theories, localization, conduction versus sensorineural deafness.",
+            "Chemical/touch: olfaction bypasses the thalamus initially; pheromones; tastes sweet/sour/salty/bitter/umami/oleogustus; super/medium/nontasters; smell-taste interaction; skin receptors.",
+            "Pain: gate-control theory and phantom limb. Balance/movement: semicircular canals support <strong>vestibular</strong> sense; <strong>kinesthesis</strong> tracks body movement."
+          ]}
+        ]
+      },
+      {
+        id: "unit2", number: 2, title: "Cognition", color: "#7253a5", pages: "PDF 54-72 · CED 47-65", intro: "Cognition covers how people perceive, think, decide, remember, forget, and measure intelligence and achievement.",
+        topics: [
+          { code:"2.1", title:"Perception", purpose:"Explain how internal and external factors organize and sometimes distort experience.", pages:[61,62], ced:"54-55", terms:["bottom-up","top-down","schema","Gestalt","attention","depth cues","constancy"], bullets:[
+            "<strong>Bottom-up</strong> processing begins with sensory input; <strong>top-down</strong> processing uses expectations. Schemas/perceptual sets are internal filters; context, experience, and culture are external filters.",
+            "Gestalt organization: closure, figure-ground, proximity, similarity. Attention may be selective (cocktail party effect); inattention can cause change blindness.",
+            "Binocular depth cues: retinal disparity and convergence. Monocular cues: relative clarity, relative size, texture gradient, linear perspective, and interposition.",
+            "Perceptual constancies preserve object perception despite retinal changes; apparent movement is perceived motion without actual movement."
+          ]},
+          { code:"2.2", title:"Thinking, Problem-Solving, Judgments, and Decision-Making", purpose:"Compare cognitive strategies, biases, executive functions, and creativity.", pages:[63,64], ced:"56-57", terms:["prototype","assimilation","accommodation","algorithm","heuristic","mental set","framing","fallacy","creativity"], bullets:[
+            "Concepts organize thought; a <strong>prototype</strong> is an ideal example. Schemas absorb information through <strong>assimilation</strong> or change through <strong>accommodation</strong>.",
+            "Algorithms test all solutions; heuristics are shortcuts. Representativeness and availability heuristics can introduce error.",
+            "Mental set, priming, framing, gambler’s fallacy, and sunk-cost fallacy can bias decisions.",
+            "Executive functions organize goal-directed behavior. Creativity uses divergent versus convergent thinking and can be blocked by functional fixedness."
+          ]},
+          { code:"2.3", title:"Introduction to Memory", purpose:"Compare memory types and the major processing models.", pages:[65,66], ced:"58-59", terms:["explicit","implicit","episodic","semantic","procedural","prospective","working memory","multi-store","levels"], bullets:[
+            "Explicit memory includes <strong>episodic</strong> and <strong>semantic</strong>; implicit includes <strong>procedural</strong>; prospective memory concerns future actions.",
+            "<strong>Long-term potentiation</strong> strengthens frequently activated synaptic connections.",
+            "Working-memory model: central executive, phonological loop, and visuospatial sketchpad interact with long-term memory.",
+            "Multi-store model: sensory (iconic/echoic), short-term, and long-term systems; automatic/effortful processing affects encoding, storage, retrieval. Levels-of-processing: structural → phonemic → semantic."
+          ]},
+          { code:"2.4", title:"Encoding Memories", purpose:"Use evidence-based processes to get information into memory.", pages:[67,67], ced:"60", terms:["mnemonic","method of loci","chunking","spacing","massed","distributed","serial position","primacy","recency"], bullets:[
+            "Encoding quality affects later storage and retrieval. Mnemonics (including method of loci), chunks, categories, and hierarchies create structure.",
+            "The <strong>spacing effect</strong> favors distributed practice over massed practice for encoding and consolidation.",
+            "The <strong>serial-position effect</strong> predicts stronger memory at the beginning (primacy) and end (recency) of a list than in the middle."
+          ]},
+          { code:"2.5", title:"Storing Memories", purpose:"Compare storage systems, rehearsal, superior memory, and impairment.", pages:[68,68], ced:"61", terms:["sensory memory","short-term","working memory","long-term","maintenance rehearsal","elaborative rehearsal","amnesia","Alzheimer’s"], bullets:[
+            "Sensory, short-term, working, and long-term memory differ in duration, capacity, and content.",
+            "<strong>Maintenance rehearsal</strong> repeats information; <strong>elaborative rehearsal</strong> attaches meaning and generally improves retention.",
+            "Autobiographical memory can be unusually strong and self-related information tends to be memorable.",
+            "Storage can be impaired by retrograde or anterograde amnesia, Alzheimer’s disease, and infantile amnesia."
+          ]},
+          { code:"2.6", title:"Retrieving Memories", purpose:"Explain recall, recognition, cues, context, state, mood, and retrieval practice.", pages:[69,69], ced:"62", terms:["recall","recognition","retrieval cue","context-dependent","state-dependent","mood-congruent","testing effect","metacognition"], bullets:[
+            "<strong>Recall</strong> retrieves without cues; <strong>recognition</strong> relies on cues.",
+            "Retrieval improves when context, mood, or physical state matches encoding: context-dependent, mood-congruent, and state-dependent memory.",
+            "Retrieval practice, including the testing effect and metacognition, makes access more successful."
+          ]},
+          { code:"2.7", title:"Forgetting and Other Memory Challenges", purpose:"Explain why retrieval fails and why memories become distorted.", pages:[70,70], ced:"63", terms:["forgetting curve","encoding failure","interference","tip of tongue","repression","misinformation","source amnesia","constructive memory"], bullets:[
+            "The forgetting curve drops rapidly after learning and then levels off.",
+            "Failure can result from weak encoding, <strong>proactive or retroactive interference</strong>, or insufficient retrieval cues (tip-of-the-tongue). Psychodynamic theory adds repression.",
+            "Memory is reconstructive: misinformation effect, source amnesia, consolidation, and imagination inflation can reduce accuracy."
+          ]},
+          { code:"2.8", title:"Intelligence and Achievement", purpose:"Evaluate theories, measurement quality, systemic bias, and mindsets.", pages:[71,72], ced:"64-65", terms:["g","IQ","standardization","validity","reliability","stereotype threat","Flynn effect","achievement","aptitude","mindset"], bullets:[
+            "Debate continues over general intelligence (<strong>g</strong>) versus multiple abilities. Early IQ divided mental age by chronological age; modern scores help allocate educational services.",
+            "Psychometrics: <strong>standardization</strong> = consistent administration; <strong>validity</strong> = measures intended construct/predicts outcome; <strong>reliability</strong> = consistent results (test-retest, split-half).",
+            "Socio-culturally responsive assessment aims to reduce stereotype threat/lift. Flynn Effect = population IQ scores rising over time; within-group variation usually exceeds between-group variation.",
+            "Poverty, discrimination, educational inequity, and historical gatekeeping affect scores and their use. Achievement tests assess learning; aptitude tests predict performance. Growth versus fixed mindset can affect achievement."
+          ]}
+        ]
+      },
+      {
+        id: "unit3", number: 3, title: "Development and Learning", color: "#28756c", pages: "PDF 74-95 · CED 67-88", intro: "Development tracks change across the lifespan; learning explains how associations, consequences, models, cognition, and biology change behavior.",
+        topics: [
+          { code:"3.1", title:"Themes and Methods in Developmental Psychology", purpose:"Use lifespan themes and appropriate research designs.", pages:[81,81], ced:"74", terms:["stability","change","nature","nurture","continuous","discontinuous","cross-sectional","longitudinal"], bullets:[
+            "Core debates: <strong>stability versus change, nature versus nurture, and continuous versus discontinuous</strong> development across the lifespan.",
+            "Cross-sectional designs compare age groups at one time; longitudinal designs follow the same participants over time. Evaluate what each can and cannot reveal."
+          ]},
+          { code:"3.2", title:"Physical Development Across the Lifespan", purpose:"Connect prenatal, infant, adolescent, and adult physical change to behavior.", pages:[82,83], ced:"75-76", terms:["teratogen","motor development","reflex","visual cliff","critical period","imprinting","puberty","menopause"], bullets:[
+            "Prenatal milestones can be influenced by teratogens, maternal illness, mutation, hormones, and environment; zygote/embryo/fetus stage details are out of scope.",
+            "Infant/child development follows a typical order but variable timing: fine/gross motor skills, reflexes such as rooting, visual-cliff depth perception, and critical/sensitive periods. Imprinting illustrates biologically timed learning.",
+            "Adolescence brings growth, puberty, primary/secondary sex characteristics, menarche, and spermarche.",
+            "Adulthood generally brings later declines in reproduction, mobility, flexibility, reaction time, and visual/auditory acuity."
+          ]},
+          { code:"3.3", title:"Gender and Sexual Orientation", purpose:"Describe how sex and gender influence socialization and development.", pages:[84,84], ced:"77", terms:["sex","gender","sexual orientation","socialization","development"], bullets:[
+            "The assessed learning objective is to describe how <strong>sex and gender influence socialization and other aspects of development</strong>.",
+            "The supplied CED gives this topic a broad learning objective but no separate essential-knowledge statements; focus on accurate, evidence-based application and on evaluating nonexperimental research."
+          ]},
+          { code:"3.4", title:"Cognitive Development Across the Lifespan", purpose:"Compare Piaget, Vygotsky, and changes in adult cognition.", pages:[85,86], ced:"78-79", terms:["Piaget","sensorimotor","preoperational","concrete","formal","object permanence","conservation","Vygotsky","ZPD","fluid","crystallized"], bullets:[
+            "Piaget: schemas change through assimilation/accommodation. <strong>Sensorimotor</strong> develops object permanence; <strong>preoperational</strong> uses symbols but shows egocentrism, animism, and weak conservation/reversibility; <strong>concrete operational</strong> uses concrete logic; <strong>formal operational</strong> supports abstract/hypothetical thought.",
+            "Theory of mind begins developing in the preoperational period; Piaget proposed that not everyone reaches formal operations.",
+            "Vygotsky: learning is social and culturally situated; scaffolding is most useful in the <strong>zone of proximal development</strong>.",
+            "Across adulthood, crystallized intelligence is relatively stable while fluid intelligence tends to decline; dementia can impair cognition."
+          ]},
+          { code:"3.5", title:"Communication and Language Development", purpose:"Explain language structure and the universal sequence of language development.", pages:[87,87], ced:"80", terms:["phoneme","morpheme","semantics","grammar","syntax","cooing","babbling","one-word","telegraphic","overgeneralization"], bullets:[
+            "Language is a shared, arbitrary, rule-governed, generative symbol system. Components include phonemes, morphemes, semantics, grammar, and syntax; pragmatics are out of scope.",
+            "Across cultures, communication develops from gestures through cooing, babbling, one-word, and telegraphic speech. Overgeneralization is a common learning error."
+          ]},
+          { code:"3.6", title:"Social-Emotional Development Across the Lifespan", purpose:"Connect ecological context, caregivers, peers, identity, and psychosocial stages.", pages:[88,90], ced:"81-83", terms:["ecological systems","parenting","attachment","temperament","separation anxiety","social clock","Erikson","ACEs","identity"], bullets:[
+            "Ecological systems: <strong>micro</strong> direct settings, <strong>meso</strong> links among microsystems, <strong>exo</strong> indirect settings, <strong>macro</strong> culture, <strong>chrono</strong> time/life stage.",
+            "Parenting styles: authoritarian, authoritative, permissive; outcomes vary by culture. Attachment can be secure or insecure (avoidant, anxious, disorganized), relates to temperament, and is shaped by comfort and separation.",
+            "Peers: parallel/pretend play; adolescent imaginary audience and personal fable. Adult development depends on cultural social clocks, emerging adulthood, supportive relationships, and attachment patterns.",
+            "Psychosocial conflicts: trust/mistrust → autonomy/shame → initiative/guilt → industry/inferiority → identity/role confusion → intimacy/isolation → generativity/stagnation → integrity/despair.",
+            "ACEs affect later relationships. Identity statuses are achievement, diffusion, foreclosure, and moratorium; identity may include racial/ethnic, gender, sexual, religious, occupational, and family dimensions."
+          ]},
+          { code:"3.7", title:"Classical Conditioning", purpose:"Map stimulus-stimulus learning from acquisition through extinction and generalization.", pages:[91,92], ced:"84-85", terms:["UCS","UCR","CS","CR","acquisition","extinction","spontaneous recovery","generalization","discrimination","higher-order","taste aversion","habituation"], bullets:[
+            "Classical conditioning pairs stimuli: <strong>UCS → UCR</strong>; after acquisition, <strong>CS → CR</strong>. Timing/order of CS and UCS matters.",
+            "Know extinction, spontaneous recovery, stimulus discrimination/generalization, and higher-order conditioning.",
+            "Emotional responses can be conditioned and counterconditioned. Taste aversion illustrates one-trial conditioning and biological preparedness.",
+            "Habituation is a diminished response after repeated/enduring stimulation. Delayed, trace, simultaneous, backward conditioning, and expectancy theory are out of scope."
+          ]},
+          { code:"3.8", title:"Operant Conditioning", purpose:"Use consequences and schedules to explain changes in behavior.", pages:[93,94], ced:"86-87", terms:["Law of Effect","reinforcement","punishment","positive","negative","shaping","learned helplessness","schedules","ratio","interval"], bullets:[
+            "The Law of Effect: reinforcing consequences increase behavior; punishing consequences decrease it. Positive/negative describe adding/removing, not good/bad.",
+            "Reinforcers may be primary or secondary. Know discrimination/generalization, shaping through successive approximations, instinctive drift, superstitious behavior, and learned helplessness.",
+            "Continuous reinforcement follows every correct response. Partial schedules are fixed/variable and ratio (responses) or interval (time). Fixed interval typically creates a scalloped response pattern."
+          ]},
+          { code:"3.9", title:"Social, Cognitive, and Neurological Factors in Learning", purpose:"Explain learning without direct reinforcement.", pages:[95,95], ced:"88", terms:["social learning","observational learning","modeling","vicarious conditioning","insight","latent learning","cognitive map"], bullets:[
+            "Social-learning theory: observation and <strong>vicarious conditioning</strong> can produce learning without direct consequences; people are more likely to copy similar models.",
+            "<strong>Insight learning</strong> is a sudden solution without an explicit association, consequence, or model.",
+            "<strong>Latent learning</strong> occurs without reinforcement and may remain hidden until useful; cognitive maps demonstrate it."
+          ]}
+        ]
+      },
+      {
+        id: "unit4", number: 4, title: "Social Psychology and Personality", color: "#b8761f", pages: "PDF 96-113 · CED 89-106", intro: "This unit connects social influence and group behavior with personality, motivation, and emotion.",
+        topics: [
+          { code:"4.1", title:"Attribution Theory and Person Perception", purpose:"Explain how people interpret causes, control, themselves, and others.", pages:[103,104], ced:"96-97", terms:["dispositional","situational","explanatory style","fundamental attribution error","self-serving","locus of control","mere exposure","self-fulfilling","social comparison"], bullets:[
+            "Attributions may be <strong>dispositional</strong> (internal) or <strong>situational</strong> (external). Explanatory style can be optimistic or pessimistic.",
+            "Biases: actor-observer, fundamental attribution error, and self-serving bias. Also connect internal/external <strong>locus of control</strong> to behavior.",
+            "Person perception: mere-exposure effect, self-fulfilling prophecy, upward/downward social comparison, and relative deprivation."
+          ]},
+          { code:"4.2", title:"Attitude Formation and Attitude Change", purpose:"Connect stereotypes, implicit attitudes, prejudice, discrimination, and dissonance.", pages:[105,105], ced:"98", terms:["stereotype","implicit attitude","prejudice","discrimination","just world","in-group","ethnocentrism","belief perseverance","cognitive dissonance"], bullets:[
+            "Stereotypes reduce cognitive load but can reflect or create bias, prejudice, and discrimination.",
+            "Implicit attitudes may operate outside awareness; examples include just-world phenomenon, out-group homogeneity, in-group bias, and ethnocentrism.",
+            "Belief perseverance sustains beliefs despite contrary evidence, often through confirmation bias. Cognitive dissonance motivates people to align conflicting actions and attitudes."
+          ]},
+          { code:"4.3", title:"Psychology of Social Situations", purpose:"Explain norms, persuasion, conformity, groups, work, and helping.", pages:[106,107], ced:"99-100", terms:["normative","informational","persuasion","central route","peripheral route","conformity","obedience","groupthink","loafing","deindividuation","bystander"], bullets:[
+            "Social norms define roles and expectations; influence can be <strong>normative</strong> or <strong>informational</strong>. Persuasion can use central/peripheral routes, halo effect, foot-in-the-door, or door-in-the-face.",
+            "Research identifies conditions that increase conformity and obedience.",
+            "Group processes: individualism/collectivism/multiculturalism, polarization, groupthink, diffusion of responsibility, social loafing, deindividuation, social facilitation, and false consensus.",
+            "Superordinate goals can unite groups; social traps pit self-interest against group welfare. I/O psychology studies work, management, relationships, and burnout.",
+            "Prosocial behavior: altruism, reciprocity/responsibility norms, social debt, and the bystander effect."
+          ]},
+          { code:"4.4", title:"Psychodynamic and Humanistic Theories of Personality", purpose:"Compare unconscious and growth-focused accounts and assessments.", pages:[108,108], ced:"101", terms:["unconscious","defense mechanisms","projective test","unconditional regard","self-actualization"], bullets:[
+            "Psychodynamic theory emphasizes unconscious processes and uses projective tests to probe preconscious/unconscious material.",
+            "Defense mechanisms: denial, displacement, projection, rationalization, reaction formation, regression, repression, and sublimation.",
+            "Humanistic theory emphasizes unconditional regard and the self-actualizing tendency. Psychosexual stages and Maslow’s hierarchy are out of scope."
+          ]},
+          { code:"4.5", title:"Social-Cognitive and Trait Theories of Personality", purpose:"Compare reciprocal influence with enduring traits and their measurement.", pages:[109,109], ced:"102", terms:["reciprocal determinism","self-concept","self-efficacy","self-esteem","traits","Big Five","factor analysis"], bullets:[
+            "Social-cognitive theory uses <strong>reciprocal determinism</strong>: person, behavior, and environment shape one another. Self-concept includes self-efficacy and self-esteem.",
+            "Trait theory views personality as enduring characteristics that produce typical responses.",
+            "Big Five: agreeableness, openness, extraversion, conscientiousness, emotional stability. Inventories and factor analysis identify trait patterns."
+          ]},
+          { code:"4.6", title:"Motivation", purpose:"Compare need, arousal, incentive, conflict, sensation-seeking, eating, and belongingness.", pages:[110,111], ced:"103-104", terms:["drive reduction","homeostasis","arousal","Yerkes-Dodson","intrinsic","extrinsic","incentive","conflict","sensation seeking","ghrelin","leptin"], bullets:[
+            "Drive-reduction theory links behavior to homeostasis; arousal theory predicts an optimal level of arousal (Yerkes-Dodson law). Self-determination contrasts intrinsic/extrinsic motivation; incentive theory emphasizes rewards.",
+            "Nonhuman animals show instincts; the CED says humans do not appear to show fixed instinctual behavior in the same way.",
+            "Lewin conflicts: approach-approach, approach-avoidance, avoidance-avoidance. Sensation seeking includes experience seeking, thrill/adventure, disinhibition, and boredom susceptibility.",
+            "Eating combines body and mind: ghrelin/leptin, hypothalamus/pituitary regulation, food availability, time, and social meals. The CED also names belongingness in the learning objective but supplies no separate EK detail."
+          ]},
+          { code:"4.7", title:"Emotion", purpose:"Explain physiological/cognitive accounts, positive emotion, and cultural expression.", pages:[112,113], ced:"105-106", terms:["affect","physiological","cognitive label","facial feedback","broaden-and-build","universal emotions","display rules"], bullets:[
+            "Emotion/affect reflects internal and external factors. Accounts differ on whether physiological and cognitive components are sequential, simultaneous, or require cognitive labeling; specific theory names are out of scope.",
+            "Facial-feedback findings are mixed. Broaden-and-build proposes positive emotion broadens awareness/action, while negative emotion tends to narrow them.",
+            "Research on universal expression is mixed; commonly studied emotions include anger, disgust, sadness, happiness, surprise, and fear. Culture shapes display rules and elicitors across gender, age, and socioeconomic position."
+          ]}
+        ]
+      },
+      {
+        id: "unit5", number: 5, title: "Mental and Physical Health", color: "#e05f47", pages: "PDF 114-134 · CED 107-127", intro: "Health, stress, well-being, psychological disorders, classification, and evidence-based treatment are integrated across perspectives.",
+        topics: [
+          { code:"5.1", title:"Introduction to Health Psychology", purpose:"Connect stress, physiology, appraisal, reaction, and coping.", pages:[121,122], ced:"114-115", terms:["stress","eustress","distress","GAS","fight-flight-freeze","tend-and-befriend","problem-focused","emotion-focused"], bullets:[
+            "Stress can increase susceptibility to disease and relate to hypertension, headaches, and immune suppression. Stressors can be eustress or distress, trauma or accumulated daily hassles; ACEs can have lifelong effects.",
+            "General adaptation syndrome: <strong>alarm</strong> (fight-flight-freeze) → <strong>resistance</strong> → <strong>exhaustion</strong>; illness risk is greatest in exhaustion.",
+            "Tend-and-befriend describes coping through care and social connection, reported more often in women.",
+            "Problem-focused coping targets the stressor; emotion-focused coping manages emotional response (for example breathing, meditation, or medication)."
+          ]},
+          { code:"5.2", title:"Positive Psychology", purpose:"Identify evidence-based contributors to well-being and resilience.", pages:[123,123], ced:"116", terms:["well-being","resilience","gratitude","signature strengths","virtues","posttraumatic growth"], bullets:[
+            "Positive psychology studies well-being, resilience, positive emotions, and psychological health.",
+            "Gratitude can increase subjective well-being. Using signature strengths relates to happiness and well-being.",
+            "Six virtue categories: wisdom, courage, humanity, justice, temperance, and transcendence. Posttraumatic growth may follow trauma or stress."
+          ]},
+          { code:"5.3", title:"Explaining and Classifying Psychological Disorders", purpose:"Evaluate definitions, diagnosis, perspectives, and interaction models.", pages:[124,125], ced:"117-118", terms:["dysfunction","distress","deviance","DSM","ICD","eclectic","biopsychosocial","diathesis-stress"], bullets:[
+            "Classification considers dysfunction, distress, and deviation from social norms. Diagnosis can help or harm depending on stigma, culture, racism, sexism, ageism, and discrimination.",
+            "Trained professionals use evidence-based tools. DSM (American Psychiatric Association) and ICD (World Health Organization) are updated as research and practice change.",
+            "Most clinicians are eclectic. Perspectives locate causes in learned associations (behavioral), unconscious experience (psychodynamic), blocked support/potential (humanistic), maladaptive cognition/emotion, reduced adaptive value (evolutionary), social/cultural dynamics, or biology/genetics.",
+            "<strong>Biopsychosocial</strong> integrates biological, psychological, social-cultural factors. <strong>Diathesis-stress</strong> combines vulnerability with stressful experience."
+          ]},
+          { code:"5.4", title:"Selected Categories of Psychological Disorders", purpose:"Recognize only the CED-listed categories, symptoms, and broad causal models.", pages:[126,131], ced:"119-124", terms:["ADHD","autism","schizophrenia","depression","bipolar","anxiety","OCD","dissociative","PTSD","eating","personality"], bullets:[
+            "<strong>Neurodevelopmental:</strong> ADHD and autism spectrum disorder; onset in development, with age/maturity-relevant behavior; possible environmental, physiological, genetic causes.",
+            "<strong>Schizophrenic spectrum:</strong> delusions, hallucinations, disorganized thought/speech, disorganized motor behavior/catatonia, negative symptoms; dopamine/genetic/biological hypotheses. Positive adds atypical experience; negative removes typical function.",
+            "<strong>Depressive:</strong> major depressive and persistent depressive disorders. <strong>Bipolar:</strong> Bipolar I and II with mania/depression cycling. Causes may be biological, genetic, social, cultural, behavioral, or cognitive.",
+            "<strong>Anxiety:</strong> specific phobia, agoraphobia, panic disorder, social anxiety, GAD; culture-bound examples ataque de nervios and taijin kyofusho. Broad causes include learning, cognition/emotion, biology/genetics.",
+            "<strong>OCD-related:</strong> OCD and hoarding. <strong>Dissociative:</strong> dissociative amnesia (with/without fugue) and dissociative identity disorder. <strong>Trauma/stressor:</strong> PTSD. <strong>Feeding/eating:</strong> anorexia and bulimia nervosa.",
+            "<strong>Personality:</strong> enduring, inflexible, culturally deviant patterns causing impairment. Cluster A odd/eccentric; B dramatic/emotional/erratic; C anxious/fearful."
+          ]},
+          { code:"5.5", title:"Treatment of Psychological Disorders", purpose:"Compare evidence, ethics, therapy techniques, and biological interventions.", pages:[132,134], ced:"125-127", terms:["psychotherapy","evidence-based","therapeutic alliance","deinstitutionalization","psychodynamic","CBT","exposure","humanistic","medication","TMS","ECT"], bullets:[
+            "Meta-analyses generally support psychotherapy effectiveness. Good treatment uses evidence, cultural humility, and a therapeutic alliance; modern care often combines medication and psychotherapy after deinstitutionalization.",
+            "Clinical ethics include nonmaleficence, fidelity, integrity, and respect for rights and dignity.",
+            "Psychodynamic: free association/dream interpretation. Cognitive: restructuring, fear hierarchies, cognitive triad. Behavioral: ABA, exposure/systematic desensitization, aversion, token economies, biofeedback. CBT includes DBT and REBT. Humanistic/person-centered: active listening and unconditional positive regard.",
+            "Hypnosis can help pain/anxiety but is not supported for accurate memory retrieval or age regression. Group therapy differs from individual care in its social context.",
+            "Biological: antidepressant, antianxiety, lithium, and antipsychotic medication; side effects may include tardive dyskinesia. Invasive options include psychosurgery/lesioning, TMS, and ECT; lobotomy is now rarely, if ever, used."
+          ]}
+        ]
+      }
+    ];
+
+    const barronEnrichment = {
+      "1": { chapter:"Ch. 1", pages:[31,35], points:[
+        "Use vocabulary as a perspective cue: <strong>reinforcement</strong> suggests behavioral, <strong>schema</strong> cognitive, <strong>neurotransmitter</strong> biological, and <strong>norm</strong> sociocultural.",
+        "One behavior can have defensible explanations at several levels; compare what each perspective emphasizes instead of treating the perspectives as mutually exclusive."
+      ]},
+      "2": { chapter:"Ch. 2", pages:[36,49], points:[
+        "Keep the two kinds of randomness separate: <strong>random sampling</strong> concerns who enters the sample and supports generalization; <strong>random assignment</strong> concerns which condition sampled participants enter and supports causal inference.",
+        "A study can support cause and effect only when an independent variable is manipulated and confounds are controlled. Measured associations still face directionality and third-variable problems.",
+        "An operational definition should state exactly how a variable is manipulated or measured so another researcher could replicate the procedure."
+      ]},
+      "3": { chapter:"Ch. 3", pages:[50,61], points:[
+        "The <strong>mean</strong> is sensitive to extreme scores; the <strong>median</strong> is often more representative in a skewed distribution.",
+        "For a normal curve, about <strong>68%</strong> of scores fall within 1 standard deviation, <strong>95%</strong> within 2, and about <strong>99.7%</strong> within 3.",
+        "For a correlation coefficient, the sign gives direction while the absolute value gives strength; neither establishes causation."
+      ]},
+      "4": { chapter:"Ch. 20", pages:[352,377], points:[
+        "Build an argument as <strong>claim → specific evidence → psychological reasoning</strong>. A quotation or statistic without a reasoning link is not a complete explanation.",
+        "For the EBQ, the second evidence/application chain should use a different source and a different psychological concept from the first chain."
+      ]},
+
+      "1.1": { chapter:"Ch. 4", pages:[63,85], points:[
+        "A genetic predisposition changes probability; it does not guarantee an outcome. Environmental conditions can strengthen, weaken, or redirect its expression.",
+        "Twin, family, and adoption comparisons work by varying degrees of genetic relatedness and shared environment, allowing cautious inferences about nature-nurture interaction."
+      ]},
+      "1.2": { chapter:"Ch. 4", pages:[63,85], points:[
+        "The <strong>sympathetic</strong> division mobilizes energy for challenge, while the <strong>parasympathetic</strong> division restores calmer, energy-conserving conditions.",
+        "Sensory neurons carry information toward the CNS, motor neurons carry commands outward, and interneurons connect and process information within the CNS."
+      ]},
+      "1.3": { chapter:"Ch. 4", pages:[63,85], points:[
+        "Neuron pathway: dendrites receive → cell body integrates → axon transmits → terminals release neurotransmitters; myelin speeds transmission along the axon.",
+        "Core chemical associations: <strong>dopamine</strong> movement/reward; <strong>serotonin</strong> mood; <strong>norepinephrine</strong> alertness; <strong>glutamate</strong> excitation/memory; <strong>GABA</strong> inhibition; <strong>endorphins</strong> pain relief; <strong>substance P</strong> pain signaling; <strong>acetylcholine</strong> muscle action/memory.",
+        "Hormone cues: <strong>adrenaline</strong> stress arousal, <strong>melatonin</strong> sleep timing, <strong>oxytocin</strong> bonding, <strong>ghrelin</strong> hunger, and <strong>leptin</strong> satiety/energy stores."
+      ]},
+      "1.4": { chapter:"Ch. 4", pages:[63,85], points:[
+        "Within the listed limbic structures, the <strong>thalamus</strong> relays most sensory input, the <strong>hypothalamus</strong> regulates drives/homeostasis and endocrine activity, the <strong>hippocampus</strong> supports new explicit memories, and the <strong>amygdala</strong> supports emotion processing.",
+        "EEG records electrical activity with fine timing; fMRI relates blood-oxygen changes to activity. Lesion and case evidence infer function from what changes after damage.",
+        "Lateralization is specialization, not a fixed ‘left-brained/right-brained’ personality type; most behavior depends on coordinated hemispheres."
+      ]},
+      "1.5": { chapter:"Ch. 5", pages:[86,97], points:[
+        "NREM 1 is light sleep, NREM 2 includes sleep spindles, and NREM 3 is deep slow-wave sleep; REM combines active brain patterns with muscle relaxation/atonia.",
+        "Across repeated sleep cycles, deep NREM generally decreases while REM periods lengthen, matching the CED’s emphasis on changing stage frequency across the night.",
+        "Useful disorder contrasts: narcolepsy involves sudden sleep attacks; apnea repeatedly interrupts breathing; somnambulism usually appears in deep NREM; REM behavior disorder disrupts normal REM muscle relaxation."
+      ]},
+      "1.6": { chapter:"Ch. 6", pages:[98,122], points:[
+        "Vision pathway, kept at the CED level: lens focuses light on the retina → rods/cones transduce it → retinal output travels through the optic nerve to visual-processing cortex.",
+        "For pitch, place information is especially useful for higher frequencies, frequency coding for lower frequencies, and volley patterns extend frequency coding across groups of neurons.",
+        "Two ears support sound localization through differences in arrival time and intensity. Flavor demonstrates sensory interaction because olfaction changes the experience of taste.",
+        "Gate-control theory predicts that spinal and brain processes can amplify or inhibit pain signals; attention and competing stimulation can therefore alter pain experience."
+      ]},
+
+      "2.1": { chapter:"Ch. 7", pages:[123,134], points:[
+        "Top-down processing is efficient but expectation-prone; bottom-up processing is driven by incoming features. Most perception combines both.",
+        "Apply only the listed Gestalt rules: closure fills gaps, figure-ground separates target from background, proximity groups nearby items, and similarity groups alike items.",
+        "Monocular cues work with one eye; retinal disparity and convergence require two. Perceptual constancy preserves an object’s apparent size, shape, or brightness despite changing retinal input.",
+        "Cultural experience can change which contextual and depth cues people habitually use, so perception is not determined by sensory input alone."
+      ]},
+      "2.2": { chapter:"Ch. 8", pages:[135,140], points:[
+        "An algorithm is systematic and dependable but may be slow; a heuristic is fast and efficient but can produce predictable errors.",
+        "<strong>Gambler’s fallacy</strong> treats independent past outcomes as if they changed the next outcome; <strong>sunk-cost fallacy</strong> continues a choice because resources already spent feel recoverable.",
+        "Mental set reuses an old strategy; functional fixedness restricts an object to its usual purpose. Divergent thinking generates alternatives, while convergent thinking narrows to one solution."
+      ]},
+      "2.3": { chapter:"Ch. 9", pages:[141,152], points:[
+        "Iconic sensory memory is a very brief visual trace; echoic memory retains auditory information somewhat longer. Attention determines what enters working memory.",
+        "The central executive allocates attention, the phonological loop handles verbal/auditory material, and the visuospatial sketchpad handles visual/spatial material.",
+        "Explicit memory is consciously reportable; procedural skill can remain intact even when damage disrupts new explicit-memory formation, illustrating separate memory systems."
+      ]},
+      "2.4": { chapter:"Ch. 9", pages:[141,152], points:[
+        "Semantic encoding creates meaning-based connections and is usually deeper than encoding appearance (structural) or sound (phonemic).",
+        "A strong mnemonic supplies an organized retrieval route: method of loci uses familiar places, while chunking and hierarchies reduce many items into meaningful groups.",
+        "Distributed study works best when sessions require active retrieval, not just repeated exposure."
+      ]},
+      "2.5": { chapter:"Ch. 9", pages:[141,152], points:[
+        "Maintenance rehearsal keeps material active through repetition; elaborative rehearsal links it to meaning and existing knowledge, making long-term storage more likely.",
+        "<strong>Anterograde amnesia</strong> impairs formation of new memories after injury; <strong>retrograde amnesia</strong> removes access to memories formed before injury.",
+        "Damage can affect explicit storage while leaving some implicit/procedural learning intact, evidence that long-term memory is not one single store."
+      ]},
+      "2.6": { chapter:"Ch. 9", pages:[141,152], points:[
+        "Recognition provides the target among cues; recall requires generating it with fewer external cues and is usually harder.",
+        "Encoding and retrieval conditions interact: matching place, bodily state, or mood can supply cues, but meaningful retrieval practice is more dependable than recreating context alone.",
+        "Testing yourself closed-book strengthens later access and reveals what metacognitive judgments about learning got wrong."
+      ]},
+      "2.7": { chapter:"Ch. 9", pages:[141,152], points:[
+        "Memory is reconstructed rather than replayed. Suggestive information can be woven into the remembered event, producing confidently held errors.",
+        "Mnemonic: <strong>proactive</strong> interference moves forward (old learning blocks new); <strong>retroactive</strong> interference reaches backward (new learning blocks old).",
+        "The forgetting curve predicts the steepest loss soon after learning, followed by a slower rate of additional loss."
+      ]},
+      "2.8": { chapter:"Ch. 10", pages:[153,176], points:[
+        "Standardization requires consistent administration and comparison with an appropriate norm group. A test may be reliable yet invalid; useful validity generally depends on adequate reliability.",
+        "Construct validity asks whether a test measures the intended trait; predictive validity asks whether scores forecast a relevant later outcome.",
+        "Modern IQ scores are interpreted relative to a standardized distribution rather than by applying the historical mental-age ratio to adults.",
+        "The Flynn effect is consistent with environmental change across generations, and average group differences must not be used to erase the larger variation among individuals within groups."
+      ]},
+
+      "3.1": { chapter:"Ch. 11", pages:[177,199], points:[
+        "Cross-sectional research is faster but age differences may reflect cohort experiences; longitudinal research shows within-person change but faces attrition and time costs.",
+        "A stage account is discontinuous by definition, while a continuous account expects gradual change; evidence can support different patterns for different domains."
+      ]},
+      "3.2": { chapter:"Ch. 11", pages:[177,199], points:[
+        "Teratogen impact depends on the exposure and developmental timing; alcohol, drugs, and some maternal infections illustrate environmental risk before birth.",
+        "Motor milestones tend to occur in a common sequence even though exact timing varies. The visual cliff operationalizes infant depth perception through approach/avoidance behavior.",
+        "Critical and sensitive periods describe windows when particular experience has especially strong developmental effects, not a claim that later learning is always impossible."
+      ]},
+      "3.3": { chapter:"Ch. 11", pages:[184,185], points:[
+        "<strong>Gender roles</strong> are culturally associated expectations and behaviors; what is treated as gender-typical varies across cultures and situations.",
+        "Gender-schema explanations emphasize how children notice social messages about gender, organize them into schemas, and use those schemas when interpreting their own and others’ behavior."
+      ]},
+      "3.4": { chapter:"Ch. 11", pages:[185,192], points:[
+        "Approximate Piaget sequence: sensorimotor (infancy-toddlerhood) → preoperational (early childhood) → concrete operational (childhood) → formal operational (late childhood onward). The order matters more than memorizing exact birthdays.",
+        "Scaffolding should target the zone between what a learner can do alone and what the learner can do with guidance, then fade as competence grows.",
+        "Fluid intelligence supports novel problem solving; crystallized intelligence draws on accumulated knowledge, explaining their different age trends."
+      ]},
+      "3.5": { chapter:"Ch. 11", pages:[192,195], points:[
+        "A <strong>phoneme</strong> is the smallest sound unit; a <strong>morpheme</strong> is the smallest meaningful unit; <strong>syntax</strong> orders words; <strong>semantics</strong> concerns meaning.",
+        "The broad sequence is cooing → babbling → one-word speech → telegraphic combinations. Overgeneralization shows rule learning, as when a child applies a regular pattern to an irregular word."
+      ]},
+      "3.6": { chapter:"Ch. 11", pages:[195,199], points:[
+        "In attachment observations, secure children use the caregiver as a base and seek comfort after separation; avoidant children minimize contact; anxious children show intense distress yet resist easy soothing.",
+        "Authoritarian emphasizes control, permissive supplies few consistent limits, and authoritative combines clear standards with warmth/explanation. These are correlational patterns whose effects vary by culture.",
+        "Ecological systems are nested, not isolated: a family-school relationship is mesosystem, a caregiver’s workplace can be exosystem, culture is macrosystem, and life transitions belong to the chronosystem."
+      ]},
+      "3.7": { chapter:"Ch. 12", pages:[200,229], points:[
+        "Build the sequence explicitly: before learning, UCS → UCR; during acquisition, the neutral stimulus is paired with the UCS; after learning, CS → CR.",
+        "Taste aversion demonstrates that biological preparedness can make a particular association form after one pairing. Counterconditioning replaces an unwanted conditioned response with an incompatible response.",
+        "Generalization broadens responding to similar stimuli; discrimination narrows responding to the trained cue."
+      ]},
+      "3.8": { chapter:"Ch. 12", pages:[200,229], points:[
+        "Two-by-two rule: reinforcement increases behavior, punishment decreases it; positive adds a consequence, negative removes one. Thus negative reinforcement is not punishment.",
+        "Schedule signatures: fixed ratio = high responding with post-reinforcement pauses; variable ratio = high persistent responding; fixed interval = scalloped acceleration; variable interval = steadier responding.",
+        "Shaping rewards successive approximations. Instinctive drift shows that biologically typical behavior can limit what reinforcement maintains."
+      ]},
+      "3.9": { chapter:"Ch. 12", pages:[200,229], points:[
+        "Observational learning is more likely when the learner attends to the model, retains the behavior, can reproduce it, and has motivation to perform it.",
+        "Latent learning is acquired before it is behaviorally displayed; a cognitive map is evidence of the hidden learning. Insight is a sudden reorganization that produces a solution without gradual reinforcement."
+      ]},
+
+      "4.1": { chapter:"Ch. 13", pages:[230,251], points:[
+        "Attribution check: fundamental attribution error overweights disposition in others; actor-observer bias explains one’s own behavior more situationally; self-serving bias claims successes and externalizes failures.",
+        "An optimistic explanatory style treats bad events as more external, specific, and temporary; a pessimistic style treats them as more internal, global, and stable.",
+        "Internal locus emphasizes personal influence; external locus emphasizes luck, circumstance, or powerful others. Neither implies total real-world control."
+      ]},
+      "4.2": { chapter:"Ch. 13", pages:[230,251], points:[
+        "Keep the levels distinct: <strong>stereotype</strong> = generalized belief, <strong>prejudice</strong> = attitude, <strong>discrimination</strong> = behavior.",
+        "Belief perseverance is the persistence of a conclusion; confirmation bias is the selective processing that can help preserve it.",
+        "Cognitive dissonance is strongest when behavior conflicts with belief and there is insufficient external justification, making attitude change one route to reduce discomfort."
+      ]},
+      "4.3": { chapter:"Ch. 13", pages:[230,251], points:[
+        "Normative influence seeks acceptance; informational influence treats others as evidence about reality. Central-route persuasion emphasizes arguments, while peripheral-route persuasion emphasizes surface cues.",
+        "Social facilitation strengthens dominant responses: it can improve easy or well-practiced performance but impair difficult or unfamiliar performance.",
+        "The bystander effect often operates through diffusion of responsibility. Superordinate goals reduce intergroup conflict by making cooperation necessary for a shared outcome.",
+        "Groupthink suppresses dissent to preserve consensus; group polarization moves discussion toward a more extreme version of the group’s initial tendency."
+      ]},
+      "4.4": { chapter:"Ch. 14", pages:[252,264], points:[
+        "Defense-mechanism cues: repression excludes from awareness; denial rejects reality; displacement redirects emotion; projection assigns one’s impulse to another; reaction formation expresses the opposite; regression returns to earlier coping; rationalization supplies a protective explanation; sublimation redirects into valued action.",
+        "Projective tests use ambiguous stimuli to invite personally shaped responses, but interpretation must still be evaluated for reliability and validity.",
+        "Humanistic personality emphasizes the self-actualizing tendency and growth supported by unconditional positive regard."
+      ]},
+      "4.5": { chapter:"Ch. 14", pages:[252,264], points:[
+        "Reciprocal determinism is a loop: personal beliefs affect behavior, behavior changes the environment, and environmental feedback changes beliefs. Self-efficacy is confidence about performing a task, while self-esteem is a broader evaluation of self-worth.",
+        "Big Five memory cue using the CED’s wording: openness, conscientiousness, extraversion, agreeableness, and emotional stability.",
+        "Factor analysis groups items that vary together; a personality inventory turns those item patterns into trait scores."
+      ]},
+      "4.6": { chapter:"Ch. 15", pages:[265,291], points:[
+        "Drive-reduction explains behavior that restores homeostasis; arousal theory explains seeking an optimal stimulation level. Yerkes-Dodson predicts that the best arousal level depends partly on task difficulty.",
+        "Conflict examples: approach-approach chooses between two desired options; avoidance-avoidance between two unwanted options; approach-avoidance weighs benefits and costs of the same option.",
+        "Ghrelin increases hunger signaling and leptin contributes to satiety/energy-store signaling, but food availability, time, learned cues, and social setting also shape eating."
+      ]},
+      "4.7": { chapter:"Ch. 15", pages:[265,291], points:[
+        "For CED purposes, compare the sequence rather than memorize theory names: bodily arousal may precede appraisal, occur alongside subjective feeling, or require a cognitive label to become a specific emotion.",
+        "Display rules regulate when, where, and how strongly emotion is shown. Cross-cultural recognition of several facial expressions coexists with cultural variation in expression and interpretation.",
+        "Broaden-and-build predicts wider attention and action possibilities during positive emotion; facial-feedback findings should be treated as mixed, not absolute."
+      ]},
+
+      "5.1": { chapter:"Ch. 16", pages:[292,297], points:[
+        "Separate the <strong>stressor</strong> (demand or event) from the <strong>stress response</strong> (physiological, cognitive, emotional, behavioral reaction). The same event can be appraised differently.",
+        "GAS tracks prolonged bodily response: alarm mobilizes, resistance sustains coping resources, and exhaustion marks depletion and elevated vulnerability.",
+        "Problem-focused coping acts on a changeable stressor; emotion-focused coping regulates the reaction, especially when the stressor cannot be immediately changed."
+      ]},
+      "5.2": { chapter:"Ch. 16", pages:[292,297], points:[
+        "Positive psychology studies flourishing with empirical methods; it is not a claim that negative emotion should be ignored.",
+        "Posttraumatic growth means reported new meaning, relationships, or strength after trauma; it does not mean the trauma was beneficial or painless.",
+        "Gratitude and using signature strengths are candidate interventions whose value should be judged with the same research standards as other psychological claims."
+      ]},
+      "5.3": { chapter:"Ch. 17", pages:[298,317], points:[
+        "DSM and ICD provide shared classification language; a category alone does not establish cause, prognosis, or the single best treatment.",
+        "Diagnosis can improve communication and access to care, while stigma, cultural mismatch, and confirmation bias can distort how later behavior is interpreted.",
+        "The eclectic and biopsychosocial approaches prevent one-cause explanations by checking biological, learned, cognitive, emotional, and sociocultural evidence together."
+      ]},
+      "5.4": { chapter:"Ch. 17", pages:[298,317], points:[
+        "Schizophrenia: positive symptoms add atypical experience (delusions, hallucinations, disorganization); negative symptoms reduce typical function (flat affect, low movement/motivation).",
+        "Differentiate time courses: panic disorder centers on recurrent unexpected attacks, GAD on prolonged diffuse worry, persistent depressive disorder on chronic depression, and bipolar disorders on depressive/manic or hypomanic cycling.",
+        "OCD combines intrusive obsessions with compulsions intended to reduce distress; PTSD may involve intrusion/flashbacks, avoidance, hypervigilance, sleep disturbance, detachment, and hostility after trauma.",
+        "Anorexia nervosa centers on restriction and significantly low weight; bulimia nervosa centers on recurrent bingeing plus compensatory behavior. Only the disorders listed by the CED are retained here."
+      ]},
+      "5.5": { chapter:"Ch. 18", pages:[318,340], points:[
+        "Systematic desensitization pairs relaxation with gradual movement through a fear hierarchy. Token economies deliver conditioned reinforcers for target behavior; cognitive restructuring challenges maladaptive interpretations.",
+        "Group therapy can add peer feedback, shared experience, and efficiency; individual therapy can offer greater privacy and one-to-one depth. Choice depends on the client, problem, evidence, and context.",
+        "Medication cues: antipsychotics often alter dopamine activity and can produce tardive dyskinesia; antidepressants and antianxiety drugs alter relevant neurotransmission; lithium is a mood stabilizer.",
+        "TMS changes brain activity magnetically; ECT induces a controlled seizure and can affect memory; psychosurgery is invasive and rare. These interventions require professional assessment and medical oversight."
+      ]}
+    };
+
+    const researchMethodToolkit = [
+      {
+        title: "Choose the design before judging the claim",
+        skills: ["2.A", "2.C"], pages: [36,59], chapter: "Ch. 2–3 · Research Methods & Statistics",
+        search: "experimental nonexperimental laboratory field experiment correlation survey naturalistic observation case study meta-analysis causation realism control",
+        points: [
+          "An <strong>experiment</strong> manipulates an independent variable, randomly assigns sampled participants to conditions, and controls competing explanations; it is the only listed design that can support a causal conclusion.",
+          "A <strong>correlational study</strong> measures variables as they occur. A survey may be the measurement tool, but it remains nonexperimental when nothing is manipulated or randomly assigned.",
+          "<strong>Naturalistic observation</strong> trades control for behavior in a realistic setting; unlike a field experiment, the observer does not manipulate an independent variable.",
+          "A <strong>case study</strong> gives unusually rich detail about one person or a small group but usually has weak generalizability. A <strong>meta-analysis</strong> combines results across studies to estimate an overall effect."
+        ]
+      },
+      {
+        title: "Turn an idea into testable variables",
+        skills: ["2.B", "2.C"], pages: [38,40],
+        search: "theory hypothesis falsifiable independent dependent variable operational definition validity reliability replication quantitative qualitative",
+        points: [
+          "A theory generates a <strong>falsifiable hypothesis</strong>: evidence must be capable of showing the prediction is wrong.",
+          "In an experiment, the researcher manipulates the <strong>independent variable</strong> and measures the <strong>dependent variable</strong>. In a nonexperimental study, call them variables of interest rather than forcing IV/DV labels onto them.",
+          "An <strong>operational definition</strong> states exactly how each variable is manipulated or measured. Precise definitions make procedures replicable and reveal whether a measure actually represents the intended construct.",
+          "Barron’s distinction: <strong>validity</strong> concerns accuracy—measuring what was intended—while <strong>reliability</strong> concerns consistency across repeated measurement or replication."
+        ]
+      },
+      {
+        title: "Separate sampling from assignment",
+        skills: ["2.B", "2.C"], pages: [40,44],
+        search: "population sample representative random sampling convenience sampling sampling bias generalizability random assignment groups",
+        points: [
+          "The <strong>population</strong> is the group a researcher wants to understand; the <strong>sample</strong> is the subset actually studied. Conclusions can generalize only as far as the sample reasonably represents that population.",
+          "<strong>Random sampling</strong> gives each population member an equal selection chance and reduces sampling bias. <strong>Convenience sampling</strong> is easier but can systematically omit parts of the population.",
+          "<strong>Random assignment</strong> occurs after the sample exists and puts participants into experimental or control conditions. Its job is to make groups comparable and limit participant-related confounds.",
+          "Memory rule: sampling supports <strong>generalization</strong>; assignment supports <strong>causal inference</strong>. A study can have one without the other."
+        ]
+      },
+      {
+        title: "Control confounds, expectancy, and response bias",
+        skills: ["2.B", "2.C"], pages: [43,47],
+        search: "confounding variables experimental control group placebo placebo effect single blind double blind experimenter bias social desirability survey wording self report bias",
+        points: [
+          "A <strong>confounding variable</strong> changes with the independent variable and could explain the dependent-variable difference. Keep conditions equivalent except for the manipulated factor.",
+          "The <strong>experimental group</strong> receives the treatment; the <strong>control group</strong> supplies a comparison. A placebo separates a treatment’s physiological effect from expectations created by receiving a treatment.",
+          "A <strong>single-blind</strong> procedure keeps participants unaware of condition; a <strong>double-blind</strong> procedure also keeps the interacting or evaluating researcher unaware, limiting experimenter expectations.",
+          "For surveys, inspect wording and answer formats. Self-report can be distorted when respondents infer what is desirable, misunderstand an item, or present themselves favorably.",
+          "<strong>Quantitative</strong> measures produce numerical values; <strong>qualitative</strong> measures preserve richer verbal or textual responses for thematic interpretation. A structured interview can use either format, while a Likert scale is quantitative."
+        ]
+      },
+      {
+        title: "Read distributions before calculating",
+        skills: ["3.A", "3.B"], pages: [50,55],
+        search: "descriptive statistics frequency distribution histogram mean median mode bimodal range standard deviation normal curve skew outlier percentile regression toward mean",
+        points: [
+          "<strong>Mean, median, and mode</strong> describe central tendency. Outliers pull the mean toward the tail, so the median may better represent the center of a skewed distribution; two equally common peaks make a distribution bimodal.",
+          "<strong>Range</strong> is highest minus lowest. <strong>Standard deviation</strong> describes typical spread around the mean: a larger value means scores are more dispersed.",
+          "For a normal curve, approximately <strong>68%</strong> of scores fall within 1 standard deviation, <strong>95%</strong> within 2, and <strong>99.7%</strong> within 3. Percentile rank reports the percentage scored at or below a value.",
+          "Regression toward the mean predicts that unusually extreme results are often followed by results closer to the average as more observations are collected."
+        ]
+      },
+      {
+        title: "Interpret relationships without overclaiming",
+        skills: ["3.C", "4.B"], pages: [55,59],
+        search: "correlation coefficient scatterplot positive negative strength direction third variable directionality statistical significance effect size practical significance",
+        points: [
+          "A <strong>correlation coefficient</strong> ranges from −1 to +1. The sign gives direction; distance from zero gives strength. A scatterplot makes both features visible.",
+          "Correlation does not establish causation because the measured relationship may run in either direction or be produced by a third variable.",
+          "<strong>Statistical significance</strong> asks whether a result is unlikely under chance expectations; <strong>effect size</strong> asks how large the relationship or group difference is. A result can be statistically significant yet practically small.",
+          "Barron discusses the common p ≤ .05 convention, but the CED asks you to interpret significance and effect size—not calculate inferential tests or memorize test formulas."
+        ]
+      },
+      {
+        title: "Protect participants and strengthen the evidence",
+        skills: ["2.B", "2.C", "2.D"], pages: [58,61],
+        search: "IRB institutional review informed consent assent no coercion voluntary confidentiality anonymity deception confederate debriefing harm risk animal peer review replication crisis meta-analysis",
+        points: [
+          "Before data collection, an institutional review board evaluates procedures involving humans or nonhuman animals. Human participation must be voluntary, with informed consent—or informed assent plus appropriate permission for minors.",
+          "Protect people from significant physical or psychological harm and protect identity through <strong>anonymity</strong> when responses cannot be linked to a person or <strong>confidentiality</strong> when that link exists but is safeguarded.",
+          "Use deception only when justified and disclose the study’s true purpose in a thorough <strong>debriefing</strong>. Research confederates count as part of the deception procedure.",
+          "Peer review checks methods and claims before publication; replication tests whether results recur. Meta-analysis can summarize an effect across many studies, a useful response to uncertainty exposed by failed replications."
+        ]
+      }
+    ];
+
+    const barronFigures = {
+      "unit0": [
+        { src:"assets/barron/distributions-figure-3-1.png", page:53, figure:"Figure 3.1", title:"Symmetrical and skewed distributions", concepts:["mean","median","skewed distribution"], alt:"Barron graphs comparing symmetrical, positively skewed, and negatively skewed distributions and the relative position of mean and median", caption:"Compare how an extreme tail pulls the mean away from the median.", scope:"Use for mean, median, outliers, and graph skew." },
+        { src:"assets/barron/normal-distribution-figure-3-2.png", page:54, figure:"Figure 3.2", title:"The normal distribution", concepts:["normal distribution","standard deviation","percentile rank","mean","median","mode"], alt:"Barron normal curve labeled with standard-deviation intervals, percentages, z scores, and percentiles", caption:"Connect the normal curve to standard-deviation intervals and percentile positions.", scope:"The CED requires interpreting normal-curve percentages, standard deviation, and percentile rank; z-score calculation is context only." },
+        { src:"assets/barron/scatterplot-figure-3-3.png", page:56, figure:"Figure 3.3", title:"Correlation scatterplot", concepts:["scatterplot","correlation coefficient","positive correlation"], alt:"Barron scatterplot showing a positive relationship between hours studied and GPA with a line of best fit", caption:"Read direction and strength from the point pattern and line of best fit.", scope:"Correlation describes association and does not establish causation." }
+      ],
+      "1.2": [
+        { src:"assets/barron/nervous-system-figure-4-2.png", page:71, figure:"Figure 4.2", title:"The nervous system", concepts:["central nervous system","peripheral nervous system","cns","pns","autonomic","somatic","sympathetic","parasympathetic"], alt:"Barron diagram dividing the nervous system into central and peripheral systems, with autonomic, somatic, sympathetic, and parasympathetic branches", caption:"Use the hierarchy to distinguish CNS from PNS and sympathetic from parasympathetic activity.", scope:"All labels shown map directly to Topic 1.2." }
+      ],
+      "1.3": [
+        { src:"assets/barron/neuron-figure-4-1.png", page:67, figure:"Figure 4.1", title:"A neuron", concepts:["neurons","neuron","action potential","neurotransmitter","glial cells","glia"], alt:"Barron diagram of two neurons showing dendrites, soma, axon, myelin sheath, terminal buttons, and the synaptic gap", caption:"Trace information flow from reception through transmission to neurotransmitter release at the synapse.", scope:"CED focus: neural structure-function and communication; do not turn the diagram into an extra-label memorization list." },
+        { src:"assets/barron/agonists-antagonists-figure-5-1.png", page:90, figure:"Figure 5.1", title:"Agonists and antagonists", concepts:["agonist","agonists","antagonist","antagonists","drugs"], alt:"Barron receptor diagram contrasting agonists that mimic neurotransmitter action with antagonists that block receptor activation", caption:"Compare an agonist that activates or mimics receptor action with an antagonist that blocks it.", scope:"The figure supports Topic 1.3 drug effects on neurotransmission." }
+      ],
+      "1.4": [
+        { src:"assets/barron/brain-figure-4-3.png", page:79, figure:"Figure 4.3", title:"The brain", concepts:["brainstem and medulla","brainstem","medulla","cerebellum","limbic","lobes"], alt:"Barron midsagittal brain diagram labeling the cerebral cortex, corpus callosum, thalamus, hypothalamus, cerebellum, medulla, and additional structures", caption:"Orient the CED-listed structures and connect each to its psychological function.", scope:"CED focus: medulla/brainstem, cerebellum, cortex and limbic structures, corpus callosum. Extra Barron labels are context only." },
+        { src:"assets/barron/cortex-lobes-figure-4-4.png", page:84, figure:"Figure 4.4", title:"Lobes of the cerebral cortex", concepts:["frontal lobe and prefrontal cortex","occipital","temporal","parietal","broca","wernicke","lobes"], alt:"Barron lateral brain diagram labeling frontal, parietal, temporal, and occipital lobes plus sensory and motor cortex", caption:"Use the spatial map to connect cortical lobes and adjacent motor/sensory areas with function.", scope:"Study functions and lesion implications, not a simplistic left-brain/right-brain personality story." }
+      ],
+      "1.5": [
+        { src:"assets/barron/sleep-stages-figure-5-2.png", page:94, figure:"Figure 5.2", title:"Stages of sleep", concepts:["nrem stages 1-3","nrem","rem","rem rebound","consolidation"], alt:"Barron hypnogram showing repeated NREM and REM stages across approximately eight hours of sleep", caption:"Read the night as repeating cycles: deep NREM is concentrated earlier, while REM periods recur and lengthen later.", scope:"The simplified graph supports the CED’s sequence and frequency emphasis." }
+      ],
+      "1.6": [
+        { src:"assets/barron/eye-figure-6-1.png", page:102, figure:"Figure 6.1", title:"Cross section of the eye", concepts:["transduction","retina","cones","rods","sensation"], alt:"Barron eye diagram showing cornea, iris, pupil, lens, retina, fovea, optic nerve, and an inverted retinal image", caption:"Follow light to the retina, then connect rods and cones to transduction and neural signaling through the optic nerve.", scope:"CED focus: lens, retina, rods, cones, fovea, optic nerve, and cortex; other labels are orientation aids." },
+        { src:"assets/barron/ear-figure-6-2.png", page:107, figure:"Figure 6.2", title:"Cross section of the ear", concepts:["transduction","pitch","vestibular","kinesthesis","sensation"], alt:"Barron ear diagram showing external, middle, and inner ear, the cochlea, semicircular canals, eardrum, ossicles, and auditory nerve", caption:"Trace sound energy toward the cochlea, where hair-cell activity begins neural transduction, then through the auditory nerve.", scope:"Extra anatomical labels provide pathway context; the CED emphasizes hearing processes and the listed concepts." },
+        { src:"assets/barron/taste-figure-6-3.png", page:110, figure:"Figure 6.3", title:"Taste sensors", concepts:["gustation","transduction","sensation"], alt:"Barron diagram of tongue papillae and a cross section containing taste buds", caption:"Connect chemical molecules, taste receptors, and transduction in gustation.", scope:"The CED assesses sensory processes; detailed papilla anatomy is supporting context." },
+        { src:"assets/barron/olfactory-figure-6-4.png", page:111, figure:"Figure 6.4", title:"The olfactory system", concepts:["olfaction","transduction","sensation"], alt:"Barron cross-section diagram showing olfactory cells and the olfactory bulb above the nasal cavity", caption:"Follow airborne molecules to olfactory receptors and the olfactory bulb.", scope:"Use the pathway to explain smell transduction and its close relationship with memory and emotion." }
+      ],
+      "2.1": [
+        { src:"assets/barron/figure-ground-figure-7-1.png", page:128, figure:"Figure 7.1", title:"Figure-ground illusion", concepts:["perception","gestalt","figure-ground"], alt:"Barron Rubin vase illusion that can be perceived as either a white vase or two dark face profiles", caption:"The same visual input alternates between figure and background.", scope:"Supports figure-ground organization and top-down interpretation." },
+        { src:"assets/barron/gestalt-figure-7-2.png", page:129, figure:"Figure 7.2", title:"Gestalt grouping rules", concepts:["gestalt","perception"], alt:"Barron diagrams illustrating closure, proximity, continuity, and similarity", caption:"Compare how the visual system groups elements into organized wholes.", scope:"CED focus: closure, figure-ground, proximity, and similarity; continuity is additional Barron context." }
+      ],
+      "2.3": [
+        { src:"assets/barron/memory-model-figure-9-1.png", page:143, figure:"Figure 9.1", title:"Three-box information-processing model", concepts:["multi-store memory model","sensory memory","short-term","long-term","working memory"], alt:"Barron flow diagram connecting sensory, short-term, and long-term memory through encoding and retrieval", caption:"Trace information through sensory, short-term, and long-term stores and note where encoding or retrieval can fail.", scope:"Use as a model, not as a claim that memory has only three literal boxes." }
+      ],
+      "2.8": [
+        { src:"assets/barron/iq-normal-figure-10-1.png", page:162, figure:"Figure 10.1", title:"Normal distribution on an IQ test", concepts:["iq","standardization","normal distribution","percentile rank"], alt:"Barron normal curve showing IQ scores, percentages, and percentile positions around a mean of 100", caption:"Connect standardized IQ scores to a normal distribution with a mean of 100.", scope:"The CED excludes labeling cognitive disabilities; use the figure for standardization and score interpretation." }
+      ],
+      "3.7": [
+        { src:"assets/barron/classical-conditioning-figure-12-1.png", page:203, figure:"Figure 12.1", title:"Classical conditioning sequence", concepts:["ucs","ucr","cs","cr","acquisition","classical conditioning"], alt:"Barron three-stage dog diagram showing before, during, and after classical conditioning with a bell and food", caption:"Identify the stimulus-response pairs before conditioning, during acquisition, and after the bell becomes the conditioned stimulus.", scope:"Use the CED’s UCS, UCR, CS, CR, acquisition, extinction, recovery, generalization, and discrimination vocabulary." }
+      ],
+      "4.2": [
+        { src:"assets/barron/stereotype-cycle-figure-13-1.png", page:242, figure:"Figure 13.1", title:"Cycle of stereotype, prejudice, and discrimination", concepts:["stereotype","prejudice","discrimination","in-group"], alt:"Barron cycle diagram showing stereotype, prejudice, and discriminatory behavior reinforcing one another", caption:"Separate belief, attitude, and behavior while recognizing their reciprocal reinforcement.", scope:"Avoid treating group stereotypes as facts; the diagram explains a harmful social process." }
+      ],
+      "4.6": [
+        { src:"assets/barron/yerkes-dodson-figure-15-1.png", page:268, figure:"Figure 15.1", title:"Yerkes-Dodson law", concepts:["yerkes-dodson","arousal","sensation seeking"], alt:"Barron inverted-U graph relating arousal level to performance", caption:"Performance rises toward an optimal arousal level and falls when arousal becomes too high.", scope:"The optimal level varies with task difficulty and the individual." }
+      ],
+      "5.5": [
+        { src:"assets/barron/anxiety-hierarchy-figure-18-1.png", page:325, figure:"Figure 18.1", title:"Anxiety hierarchy", concepts:["exposure","cbt","psychotherapy"], alt:"Barron graded anxiety hierarchy progressing from photographs of spiders to direct contact with spiders", caption:"See how systematic desensitization orders feared situations from lower to higher anxiety.", scope:"This is an educational treatment example, not a self-treatment plan." }
+      ]
+    };
+
+    const esc = (value) => String(value).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    const strip = (html) => html.replace(/<[^>]*>/g, " ");
+    const pageLabel = (topic) => topic.pages[0] === topic.pages[1] ? `PDF p. ${topic.pages[0]} · CED p. ${topic.ced}` : `PDF pp. ${topic.pages[0]}-${topic.pages[1]} · CED pp. ${topic.ced}`;
+
+    const scienceSkillLookup = Object.fromEntries(
+      cedFramework.sciencePractices.flatMap(practice => practice.skills.map(skill => [skill.code, skill]))
+    );
+
+    const escapeRegex = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+    function topicConceptCandidates(topic) {
+      const emphasized = topic.bullets.flatMap(bullet => [...bullet.matchAll(/<strong>(.*?)<\/strong>/g)].map(match => strip(match[1])));
+      const fragments = emphasized.flatMap(value => value.split(/\s*(?:,|;|→)\s*/));
+      const unique = new Map();
+      [...topic.terms, ...fragments]
+        .map(value => value.trim().replace(/[:：]+$/, ""))
+        .filter(value => value.length > 1)
+        .forEach(value => { if (!unique.has(value.toLowerCase())) unique.set(value.toLowerCase(), value); });
+      return [...unique.values()].sort((a, b) => b.length - a.length);
+    }
+
+    function highlightText(text, keywords) {
+      const source = String(text);
+      if (!keywords.length) return esc(source);
+      const alternatives = keywords.map(escapeRegex).join("|");
+      const pattern = new RegExp(`(^|[^A-Za-z0-9])(${alternatives})(?=$|[^A-Za-z0-9])`, "gi");
+      let output = "", cursor = 0, match;
+      while ((match = pattern.exec(source)) !== null) {
+        output += esc(source.slice(cursor, match.index));
+        output += esc(match[1]);
+        output += `<mark class="ek-keyword">${esc(match[2])}</mark>`;
+        cursor = match.index + match[0].length;
+      }
+      return output + esc(source.slice(cursor));
+    }
+
+    function formatEssential(text, keywords) {
+      const main = String(text).split(/\s*Exclusion Statement:\s*/)[0].trim();
+      return highlightText(main, keywords);
+    }
+
+    const conceptKey = (value) => String(value).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+    const conceptSlug = (value) => conceptKey(value).replace(/\s+/g, "-") || "concept";
+    const conceptId = (topicCode, concept) => `concept-${String(topicCode).replace(/[^a-z0-9]+/gi, "-")}-${conceptSlug(concept)}`;
+    const topicId = (topicCode) => `topic-${String(topicCode).replace(/[^a-z0-9]+/gi, "-")}`;
+    const exampleFor = (entry, topicCode) => scenarioExamples[topicCode]?.[entry.concept] || realLifeExamples[topicCode]?.[entry.concept] || entry.example;
+
+    function stableHash(value) {
+      let hash = 2166136261;
+      for (const character of String(value)) {
+        hash ^= character.charCodeAt(0);
+        hash = Math.imul(hash, 16777619);
+      }
+      return hash >>> 0;
+    }
+
+    function stableShuffle(items, seed) {
+      return [...items].sort((a, b) => {
+        const first = stableHash(`${seed}|${typeof a === "string" ? a : a.concept}`);
+        const second = stableHash(`${seed}|${typeof b === "string" ? b : b.concept}`);
+        return first - second || String(typeof a === "string" ? a : a.concept).localeCompare(String(typeof b === "string" ? b : b.concept));
+      });
+    }
+
+    function topicEntries(topicCode) {
+      return [...(cedConcepts[topicCode] || []), ...(barronExtraConcepts[topicCode] || [])];
+    }
+
+    function quizCueFor(entry, topicCode) {
+      const example = exampleFor(entry, topicCode) || "";
+      const targetPattern = new RegExp(escapeRegex(entry.concept).replace(/\s+/g, "\\s+"), "i");
+      if (!targetPattern.test(example)) return { label:"Scenario", text:example };
+      let description = String(entry.definition)
+        .replace(new RegExp(`^${escapeRegex(entry.concept)}\\s+(?:is|are|means|refers to|describes)\\s+`, "i"), "")
+        .replace(new RegExp(escapeRegex(entry.concept), "gi"), "This concept")
+        .trim();
+      if (description) description = description[0].toUpperCase() + description.slice(1);
+      return { label:"Description", text:description || example.replace(targetPattern, "this concept") };
+    }
+
+    function mcqOptionsFor(entry, topicCode) {
+      const entries = topicEntries(topicCode);
+      const entryByKey = new Map(entries.map(item => [conceptKey(item.concept), item]));
+      const targetKey = conceptKey(entry.concept);
+      const candidateGroups = (comparisonGroups[topicCode] || [])
+        .map(group => ({ group, resolved:group.concepts.map(name => entryByKey.get(conceptKey(name))).filter(Boolean) }))
+        .filter(({ resolved }) => resolved.some(item => conceptKey(item.concept) === targetKey));
+      candidateGroups.sort((a, b) => {
+        const aEnough = a.resolved.length >= 4 ? 0 : 1;
+        const bEnough = b.resolved.length >= 4 ? 0 : 1;
+        return aEnough - bEnough || a.resolved.length - b.resolved.length;
+      });
+      const prioritized = candidateGroups.length ? candidateGroups[0].resolved : [];
+      const distractorMap = new Map();
+      stableShuffle(prioritized, `${topicCode}|${entry.concept}|family`).forEach(item => {
+        const key = conceptKey(item.concept);
+        if (key !== targetKey && distractorMap.size < 3 && !distractorMap.has(key)) distractorMap.set(key, item);
+      });
+      stableShuffle(entries, `${topicCode}|${entry.concept}|topic`).forEach(item => {
+        const key = conceptKey(item.concept);
+        if (key !== targetKey && distractorMap.size < 3 && !distractorMap.has(key)) distractorMap.set(key, item);
+      });
+      const distractors = [...distractorMap.values()];
+      return stableShuffle([entry, ...distractors], `${topicCode}|${entry.concept}|options`);
+    }
+
+    function conceptQuiz(entry, topicCode) {
+      const options = mcqOptionsFor(entry, topicCode);
+      if (options.length !== 4) return "";
+      const quizId = `quiz-${String(topicCode).replace(/[^a-z0-9]+/gi, "-")}-${conceptSlug(entry.concept)}`;
+      const cue = quizCueFor(entry, topicCode);
+      const stems = ["Which concept is best illustrated?", "Which term best matches this situation?", "A psychologist would identify this as which concept?"];
+      const stem = stems[stableHash(`${topicCode}|${entry.concept}|stem`) % stems.length];
+      return `<details class="concept-quiz">
+        <summary><span>Quick check</span><span>1 beginner MCQ · 4 choices</span></summary>
+        <form class="concept-quiz-form" data-answer="${esc(entry.concept)}" data-definition="${esc(entry.definition)}">
+          <p class="quiz-source-note">Original CED-aligned item · scenario style informed by the assigned workbook and review books</p>
+          <p class="quiz-stem"><b>${esc(cue.label)}</b><br>${esc(cue.text)}<br><strong>${esc(stem)}</strong></p>
+          <fieldset class="quiz-options"><legend>${esc(stem)}</legend>${options.map((option, index) => `<label class="quiz-option"><input type="radio" name="${esc(quizId)}" value="${esc(option.concept)}"><span><b>${String.fromCharCode(65 + index)}</b> · ${esc(option.concept)}</span></label>`).join("")}</fieldset>
+          <div class="quiz-actions"><button class="quiz-check" type="submit">Check answer</button><p class="quiz-feedback" aria-live="polite"></p></div>
+        </form>
+      </details>`;
+    }
+
+    function comparisonSection(topicCode) {
+      const entries = topicEntries(topicCode);
+      const entryByKey = new Map(entries.map(entry => [conceptKey(entry.concept), entry]));
+      const groups = (comparisonGroups[topicCode] || []).map(group => ({
+        ...group,
+        entries:[...new Map(group.concepts.map(name => entryByKey.get(conceptKey(name))).filter(Boolean).map(entry => [conceptKey(entry.concept), entry])).values()]
+      })).filter(group => group.entries.length >= 2);
+      if (!groups.length) return "";
+      const rowCount = groups.reduce((sum, group) => sum + group.entries.length, 0);
+      return `<details class="comparison-section">
+        <summary><h4>Compare similar concepts</h4><span>${groups.length} topic-end table${groups.length === 1 ? "" : "s"} · ${rowCount} contrast rows</span></summary>
+        <div class="comparison-section-body">${groups.map(group => `<section class="comparison-group">
+          <h5>${esc(group.title)}</h5>
+          <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Concept</th><th>Core distinction</th><th>Applied clue</th></tr></thead><tbody>${group.entries.map(entry => `<tr><td>${esc(entry.concept)}</td><td>${esc(entry.definition)}</td><td>${esc(exampleFor(entry, topicCode))}</td></tr>`).join("")}</tbody></table></div>
+        </section>`).join("")}</div>
+      </details>`;
+    }
+
+    function relatedFiguresFor(concept, figures) {
+      const key = conceptKey(concept);
+      return figures.filter(figure => (figure.concepts || []).some(label => {
+        const figureKey = conceptKey(label);
+        const compactKey = key.replace(/\s+/g, ""), compactFigureKey = figureKey.replace(/\s+/g, "");
+        return key === figureKey || key.includes(figureKey) || figureKey.includes(key) || compactKey.includes(compactFigureKey) || compactFigureKey.includes(compactKey);
+      }));
+    }
+
+    function conceptSection(entries, figures = [], options = {}) {
+      if (!entries.length) return "";
+      const heading = options.heading || "Key concepts from Essential Knowledge";
+      const note = options.note || `${entries.length} CED-derived concept${entries.length === 1 ? "" : "s"}`;
+      const className = options.className || "";
+      const topicCode = options.topicCode || "unit0";
+      return `<details class="concept-section inner-disclosure ${className}">
+        <summary class="concept-section-head"><h4>${esc(heading)}</h4><span class="concept-count">${esc(note)}</span></summary>
+        <div class="concept-grid">${entries.map(entry => {
+          const related = relatedFiguresFor(entry.concept, figures);
+          const example = exampleFor(entry, topicCode);
+          return `<article class="concept-entry" id="${esc(conceptId(topicCode, entry.concept))}" data-concept-key="${esc(conceptKey(entry.concept))}" data-search-target data-search="${esc([entry.concept, entry.definition, example, ...(entry.cedTerms || [])].join(" "))}">
+            <h5>${esc(entry.concept)}</h5>
+            <p><b>Definition</b><br>${esc(entry.definition)}</p>
+            <p><b>Example</b><br>${esc(example)}</p>
+            ${conceptQuiz(entry, topicCode)}
+            <div class="concept-source-row">
+              ${entry.cedCode ? `<a class="concept-source ced-concept-source" href="${cedPage(entry.cedPage)}" target="_blank" rel="noopener">CED ${esc(entry.cedCode)} ↗</a>` : ""}
+              <a class="concept-source" href="${barronPage(entry.page)}" target="_blank" rel="noopener">Barron ${entry.definitionSource === "barron" ? "definition" : "context"} · PDF p. ${entry.page} ↗</a>
+              ${entry.definitionSource === "ced" ? `<span class="context-badge">definition condensed from CED</span>` : entry.definitionSource === "ced-aligned" ? `<span class="context-badge">CED-aligned synthesis · Barron context</span>` : ""}
+            </div>
+            ${related.length ? `<div class="concept-inline-figures">${related.map(figure => `<figure class="concept-inline-figure" data-source="${esc(figure.source || "Barron")}">
+              <a href="${figurePage(figure)}" target="_blank" rel="noopener" title="${esc(figureOpenTitle(figure))}"><img src="${esc(figure.src)}" alt="${esc(figure.alt)}" loading="lazy" decoding="async"></a>
+              <figcaption><b>${esc(figure.source || "Barron")} · ${esc(figure.figure)} · ${esc(figure.title)}</b> — ${esc(figure.caption)}<span class="figure-scope"><b>CED scope:</b> ${esc(figure.scope)}</span>${figure.pageUrl ? `<span class="figure-attribution">Image: ${esc(figure.artist)} · <a href="${esc(figure.licenseUrl || figure.pageUrl)}" target="_blank" rel="noopener">${esc(figure.license)}</a> · <a href="${esc(figure.pageUrl)}" target="_blank" rel="noopener">source page ↗</a></span>` : ""}</figcaption>
+            </figure>`).join("")}</div>` : ""}
+          </article>`;
+        }).join("")}</div>
+      </details>`;
+    }
+
+    function topicMindMap(topic, concepts) {
+      const unique = [...new Map(concepts.map(entry => [conceptKey(entry.concept), entry.concept])).entries()];
+      if (!unique.length) return "";
+      return `<section class="topic-mindmap" aria-label="Topic ${esc(topic.code)} concept mind map">
+        <div class="topic-mindmap-head"><h4>Topic mind map</h4><span>${unique.length} concept node${unique.length === 1 ? "" : "s"} · click a node to locate it</span></div>
+        <div class="mindmap-layout"><div class="mindmap-root">${esc(topic.code)}<br>${esc(topic.title)}</div><div class="mindmap-nodes">${unique.map(([key, concept]) => `<button class="mindmap-node" type="button" data-concept-key="${esc(key)}">${esc(concept)}</button>`).join("")}</div></div>
+      </section>`;
+    }
+
+    function topicCard(topic, group, color) {
+      const enrichment = barronEnrichment[topic.code];
+      const figures = [...(barronFigures[topic.code] || []), ...(myersFigures[topic.code] || []), ...(webFigures[topic.code] || [])];
+      const concepts = cedConcepts[topic.code] || [];
+      const barronOnlyConcepts = barronExtraConcepts[topic.code] || [];
+      const details = cedFramework.topics[topic.code];
+      const unitNumber = group.replace("unit", "");
+      const glance = cedFramework.unitGlance[unitNumber]?.topics[topic.code];
+      const genericHighlightTerms = new Set(["behavior", "concept", "development", "disorder", "disorders", "emotion", "memory", "people", "process", "research", "social", "system", "theory"]);
+      const keywords = [...new Set(concepts.flatMap(entry => [...(entry.cedTerms || []), entry.concept]))]
+        .filter(term => !genericHighlightTerms.has(conceptKey(term)))
+        .sort((a, b) => b.length - a.length);
+      const cleanedEssentials = (details?.essentials || []).map(item => [item.code, String(item.text).split(/\s*Exclusion Statement:\s*/)[0].trim()]);
+      const search = [
+        topic.code, topic.title, topic.purpose, ...keywords, ...topic.bullets.map(strip),
+        ...cleanedEssentials.flat(),
+        ...(glance?.skills || []).flatMap(code => [code, scienceSkillLookup[code]?.title || ""]),
+        ...(enrichment?.points || []).map(strip), enrichment ? "Barron aligned enrichment" : "",
+        ...(comparisonGroups[topic.code] || []).flatMap(group => [group.title, ...group.concepts]),
+        ...figures.flatMap(figure => [figure.figure, figure.title, figure.alt, figure.caption, figure.scope]),
+        ...concepts.flatMap(entry => [entry.concept, entry.definition, exampleFor(entry, topic.code)]),
+        ...barronOnlyConcepts.flatMap(entry => [entry.concept, entry.definition, exampleFor(entry, topic.code)])
+      ].join(" ");
+      const essentialBlock = details ? `<details class="ced-ledger ek-ledger inner-disclosure">
+        <summary class="block-heading"><h4>Essential knowledge</h4><span>${details.essentials.length} coded statement${details.essentials.length === 1 ? "" : "s"}</span></summary>
+        ${details.essentials.length ? `<ol class="ek-list">${details.essentials.map(item => {
+          const essentialText = String(item.text).split(/\s*Exclusion Statement:\s*/)[0].trim();
+          return `<li class="ek-item" data-search-target data-search="${esc(`${item.code} ${essentialText}`)}"><span class="ek-code">${esc(item.code)}</span><span class="ek-text">${formatEssential(item.text, keywords)}</span></li>`;
+        }).join("")}</ol>` : `<p class="no-ek">The CED provides no separate Essential Knowledge statement for Topic ${esc(topic.code)}. The concept section therefore uses Learning Objective ${esc(details.objectives[0]?.code || "")} and the official topic title as its clearly labeled fallback.</p>`}
+      </details>` : "";
+      const extraConceptBlock = conceptSection(barronOnlyConcepts, figures, { heading:"Barron-only concepts", note:`${barronOnlyConcepts.length} concept${barronOnlyConcepts.length === 1 ? "" : "s"} beyond coded CED EK`, className:"barron-extra-concepts", topicCode:topic.code });
+      const barronBlock = enrichment ? `<div class="barron-note">
+        <div class="barron-head"><span class="barron-label">Barron’s aligned enrichment · beyond coded EK</span><a class="barron-link" href="${barronPage(enrichment.pages[0])}" target="_blank" rel="noopener" title="Open Barron’s source at PDF page ${enrichment.pages[0]} in a new tab">${enrichment.chapter} · PDF pp. ${enrichment.pages[0]}-${enrichment.pages[1]} ↗</a></div>
+        <p class="barron-scope-note">Supplemental Barron context is kept here so it is not mistaken for required CED Essential Knowledge.</p>
+        <ul>${enrichment.points.map(point => `<li>${point}</li>`).join("")}</ul>
+        ${extraConceptBlock}
+      </div>` : "";
+      const conceptBlock = conceptSection(concepts, figures, {
+        heading: details?.essentials.length ? "Key concepts from Essential Knowledge" : "CED concepts from the Learning Objective",
+        note: details?.essentials.length ? `${concepts.length} concepts extracted from coded EK` : `${concepts.length} concepts · LO/title fallback`,
+        className: "ced-concepts",
+        topicCode: topic.code
+      });
+      return `<details class="card searchable" id="${esc(topicId(topic.code))}" data-group="${group}" data-topic-code="${esc(topic.code)}" data-search="${esc(search)}" style="--unit-color:${color}">
+        <summary>
+          <span class="topic-code">${esc(topic.code)}</span>
+          <span><span class="topic-title">${esc(topic.title)}</span><span class="topic-purpose">${esc(topic.purpose)}</span></span>
+        </summary>
+        <div class="card-body">
+          ${topicMindMap(topic, concepts)}
+          <div class="study-synthesis"><h4>Study synthesis</h4><ul>${topic.bullets.map(b => `<li>${b}</li>`).join("")}</ul></div>
+          ${essentialBlock}
+          ${conceptBlock}
+          ${barronBlock}
+          ${comparisonSection(topic.code)}
+          <div class="card-footer"><span class="scope">Required framework</span><a class="source-link" href="${cedPage(topic.pages[0])}" target="_blank" rel="noopener" title="Open source PDF at page ${topic.pages[0]} in a new tab">${pageLabel(topic)} ↗</a></div>
+        </div>
+      </details>`;
+    }
+
+    function practiceCard(practice) {
+      const enrichment = barronEnrichment[practice.code];
+      const search = [practice.code, practice.title, practice.description, ...practice.skills.flatMap(skill => [skill.code, skill.title, ...skill.details]), ...(enrichment?.points || []).map(strip)].join(" ");
+      const barronBlock = enrichment ? `<div class="barron-note">
+        <div class="barron-head"><span class="barron-label">Barron’s practice bridge</span><a class="barron-link" href="${barronPage(enrichment.pages[0])}" target="_blank" rel="noopener">${enrichment.chapter} · PDF pp. ${enrichment.pages[0]}-${enrichment.pages[1]} ↗</a></div>
+        <ul>${enrichment.points.map(point => `<li>${point}</li>`).join("")}</ul>
+      </div>` : "";
+      return `<details class="card searchable" data-group="unit0" data-search="${esc(search)}" style="--unit-color:#213a7a">
+        <summary><span class="topic-code">${esc(practice.code)}</span><span><span class="topic-title">${esc(practice.title)}</span><span class="topic-purpose">${esc(practice.description)}</span></span></summary>
+        <div class="card-body">
+          <div class="practice-skill-list">${practice.skills.map(skill => `<section class="practice-skill">
+            <div class="practice-skill-head"><span class="code-badge">${esc(skill.code)}</span><b>${esc(skill.title)}</b></div>
+            ${skill.details.length ? `<ul>${skill.details.map(detail => `<li>${esc(detail)}</li>`).join("")}</ul>` : ""}
+          </section>`).join("")}</div>
+          ${barronBlock}
+          <div class="card-footer"><span class="scope">Official Science Practice</span><a class="source-link" href="${cedPage(21)}" target="_blank" rel="noopener">PDF pp. 21-24 · CED pp. 14-17 ↗</a></div>
+        </div>
+      </details>`;
+    }
+
+    function researchMethodCard(item) {
+      const chapter = item.chapter || (item.pages[0] < 50 ? "Ch. 2 · Research Methods" : "Ch. 3 · Statistics & Ethics");
+      const search = [item.title, ...item.skills, item.search, ...item.points.map(strip), "Barron research methods Unit 0"].join(" ");
+      return `<article class="research-card searchable" data-group="unit0" data-search="${esc(search)}">
+        <div class="skill-map">${item.skills.map(skill => `<span>${esc(skill)}</span>`).join("")}</div>
+        <h4>${esc(item.title)}</h4>
+        <ul>${item.points.map(point => `<li>${point}</li>`).join("")}</ul>
+        <a class="research-source" href="${barronPage(item.pages[0])}" target="_blank" rel="noopener">Barron ${chapter} · PDF pp. ${item.pages[0]}-${item.pages[1]} · opens in new tab ↗</a>
+      </article>`;
+    }
+
+    function practiceSection() {
+      const unit0Entries = cedConcepts.unit0 || [];
+      const unit0Search = [
+        ...unit0Entries.flatMap(entry => [entry.concept, entry.definition, entry.example]),
+        ...(comparisonGroups.unit0 || []).flatMap(group => [group.title, ...group.concepts])
+      ].join(" ");
+      return `<section class="content-section" id="unit-0" data-section-group="unit0" style="--unit-color:#213a7a">
+        <div class="section-head"><div><p class="section-kicker">Study Unit 0</p><h2>Science Practices & Research Methods</h2></div><div class="section-meta">All 11 coded CED skills, expanded with Barron 2026 Chapters 2–3. Practices 1–3 appear in MCQ; all four appear across FRQ.</div></div>
+        <div class="unit-intro"><div class="unit-number">0</div><div><span class="weight">Course through-line</span><p>Ask what claim a study can support, how its variables and sample were constructed, whether its data justify the conclusion, and whether its procedures protect participants.</p></div></div>
+        <div class="unit-zero-note"><b>Organizer note.</b> “Unit 0” is this wiki’s study structure for the Science Practices and research methods; it is not a sixth official College Board content unit.</div>
+        <div class="subsection-head"><h3>Barron research-method toolkit</h3><span>CED-aligned explanations from PDF pp. 36–61</span></div>
+        <div class="research-grid">${researchMethodToolkit.map(researchMethodCard).join("")}</div>
+        <div class="searchable" data-group="unit0" data-search="${esc(unit0Search)}">${conceptSection(unit0Entries, [...(barronFigures.unit0 || []), ...(myersFigures.unit0 || [])], { heading:"Research concepts from the Science Practices", note:`${unit0Entries.length} CED-aligned research concepts`, className:"unit0-concepts", topicCode:"unit0" })}</div>
+        ${comparisonSection("unit0")}
+        <div class="subsection-head"><h3>Official Science Practice ledger</h3><span>All CED codes 1.A–4.B</span></div>
+        <div class="cards">${cedFramework.sciencePractices.map(practiceCard).join("")}</div>
+      </section>`;
+    }
+
+    function unitGlancePanel(unit) {
+      const glance = cedFramework.unitGlance[String(unit.number)];
+      const rows = unit.topics.map(topic => {
+        const item = glance.topics[topic.code];
+        return `<tr><td>${esc(topic.code)}</td><td>${esc(topic.title)}</td><td>${item.periods}</td><td><span class="skill-chips">${item.skills.map(code => `<span class="skill-chip" title="${esc(scienceSkillLookup[code]?.title || "Science Practice")}">${esc(code)}</span>`).join("")}</span></td></tr>`;
+      }).join("");
+      const totalPeriods = Object.values(glance.topics).reduce((sum, item) => sum + item.periods, 0);
+      return `<div class="unit-glance-panel">
+        <div class="unit-glance-head"><b>Unit at a Glance syllabus</b><span>${totalPeriods} suggested topic periods · <a class="source-link" href="${cedPage(glance.pdfPages[0])}" target="_blank" rel="noopener">PDF pp. ${glance.pdfPages[0]}-${glance.pdfPages[1]} ↗</a></span></div>
+        <div class="unit-glance-scroll"><table class="unit-glance-table"><thead><tr><th>Topic</th><th>Required syllabus topic</th><th>Periods</th><th>Suggested Science Practices</th></tr></thead><tbody>${rows}</tbody></table></div>
+      </div>`;
+    }
+
+    function unitKnowledgeTree(unit) {
+      const topicBranches = unit.topics.map(topic => {
+        const entries = cedConcepts[topic.code] || [];
+        const topicDetails = cedFramework.topics[topic.code];
+        const essentialLookup = new Map((topicDetails?.essentials || []).map(item => [item.code, String(item.text).split(/\s*Exclusion Statement:\s*/)[0].trim()]));
+        const essentialOrder = new Map((topicDetails?.essentials || []).map((item, index) => [item.code, index]));
+        const groups = new Map();
+        entries.forEach(entry => {
+          const code = entry.cedCode || topicDetails?.objectives?.[0]?.code || `Topic ${topic.code}`;
+          if (!groups.has(code)) groups.set(code, []);
+          groups.get(code).push(entry);
+        });
+        const ekBranches = [...groups.entries()].sort(([codeA], [codeB]) => (essentialOrder.get(codeA) ?? 999) - (essentialOrder.get(codeB) ?? 999) || codeA.localeCompare(codeB, undefined, { numeric:true })).map(([code, concepts]) => {
+          const fullText = essentialLookup.get(code) || `CED-aligned concepts for ${topic.title}.`;
+          const conciseText = fullText.length > 150 ? `${fullText.slice(0, 147).trim()}…` : fullText;
+          return `<li><div class="unit-tree-ek-node"><b>Essential Knowledge ${esc(code)}</b><span>${esc(conciseText)}</span></div><div class="unit-tree-leaves">${concepts.map(entry => `<button class="unit-tree-concept" type="button" data-target-id="${esc(conceptId(topic.code, entry.concept))}" title="Open ${esc(entry.concept)} in Topic ${esc(topic.code)}">${esc(entry.concept)}</button>`).join("")}</div></li>`;
+        }).join("");
+        return `<li><details class="unit-tree-topic"><summary><span class="unit-tree-topic-code">${esc(topic.code)}</span><span>${esc(topic.title)}</span><span class="unit-tree-topic-count">${entries.length} concepts</span></summary><ul class="unit-tree-ek-list">${ekBranches}</ul></details></li>`;
+      }).join("");
+      const conceptTotal = unit.topics.reduce((sum, topic) => sum + (cedConcepts[topic.code] || []).length, 0);
+      return `<details class="unit-knowledge-map" open>
+        <summary><b>Unit ${unit.number} knowledge tree</b><span>CED hierarchy · Unit → Topic → Essential Knowledge → Concept · ${conceptTotal} concepts</span></summary>
+        <div class="unit-tree-canvas"><div class="unit-tree-root">Unit ${unit.number}<br>${esc(unit.title)}</div><ul class="unit-tree-topics">${topicBranches}</ul></div>
+      </details>`;
+    }
+
+    function unitSection(unit) {
+      const totalPeriods = Object.values(cedFramework.unitGlance[String(unit.number)].topics).reduce((sum, item) => sum + item.periods, 0);
+      return `<section class="content-section" id="unit-${unit.number}" data-section-group="${unit.id}" style="--unit-color:${unit.color}">
+        <div class="section-head"><div><p class="section-kicker">Unit ${unit.number}</p><h2>${esc(unit.title)}</h2></div><div class="section-meta">15-25% of MCQ · ${totalPeriods} suggested topic periods · ${unit.pages}</div></div>
+        <div class="unit-intro"><div class="unit-number">${unit.number}</div><div><span class="weight">Course through-line</span><p>${esc(unit.intro)}</p></div></div>
+        ${unitKnowledgeTree(unit)}
+        ${unitGlancePanel(unit)}
+        <div class="cards">${unit.topics.map(t => topicCard(t, unit.id, unit.color)).join("")}</div>
+      </section>`;
+    }
+
+    function examSection() {
+      const source154 = cedPage(154), source157 = cedPage(157), source176 = cedPage(176), source181 = cedPage(181);
+      return `<section class="content-section" id="exam" data-section-group="exam">
+        <div class="section-head"><div><p class="section-kicker">Assessment map</p><h2>Exam Playbook</h2></div><div class="section-meta">2 hours 40 minutes · 75 MCQ · 2 FRQ · digital format details summarized from the supplied CED.</div></div>
+        <div class="exam-grid">
+          <article class="exam-card searchable" data-group="exam" data-search="exam format multiple choice 75 90 minutes free response 70 minutes weighting">
+            <h3>Format at a glance</h3>
+            <p><strong>Section I:</strong> 75 MCQ in 90 minutes, 66.7% of score. Includes discrete and set-based items.</p>
+            <p><strong>Section II:</strong> 2 FRQ in 70 minutes, 33.3% of score. Each FRQ is worth 16.65%.</p>
+            <p><a class="source-link" href="${source154}" target="_blank" rel="noopener">PDF p. 154 · CED p. 147 ↗</a></p>
+          </article>
+          <article class="exam-card searchable" data-group="exam" data-search="MCQ weighting concept application research methods data interpretation units 15 25">
+            <h3>MCQ emphasis</h3>
+            <div class="scoreline"><span>Concept Application</span><b>~65%</b></div><div class="scorebar"><i style="--pct:65%"></i></div>
+            <div class="scoreline"><span>Research Methods</span><b>~25%</b></div><div class="scorebar"><i style="--pct:25%"></i></div>
+            <div class="scoreline"><span>Data Interpretation</span><b>~10%</b></div><div class="scorebar"><i style="--pct:10%"></i></div>
+            <p>Each of the five units carries a broad <strong>15-25%</strong> range.</p>
+            <p><a class="source-link" href="${cedPage(155)}" target="_blank" rel="noopener">PDF p. 155 · CED p. 148 ↗</a></p>
+          </article>
+          <article class="exam-card searchable" data-group="exam" data-search="AAQ article analysis question method variable statistic ethics generalizability argumentation seven points">
+            <h3>FRQ 1 · AAQ · 7 points</h3>
+            <p>One summarized peer-reviewed source. <strong>25 minutes</strong>, including a 10-minute reading period. Assesses Practices 2, 3, 4.</p>
+            <ol><li>Research method (1)</li><li>Operational definition/variable (1)</li><li>Statistic in context (1)</li><li>Ethic + how applied (1)</li><li>Generalizability + participant evidence (1)</li><li>Use a specific result to support/refute the concept or hypothesis (2)</li></ol>
+            <p><a class="source-link" href="${source176}" target="_blank" rel="noopener">Rubric: PDF pp. 176-180 ↗</a></p>
+          </article>
+          <article class="exam-card wide searchable" data-group="exam" data-search="EBQ evidence based question claim sources citation evidence reasoning application seven points">
+            <h3>FRQ 2 · EBQ · 7 points</h3>
+            <p>Three summarized peer-reviewed sources on one topic. <strong>45 minutes</strong>, including a 15-minute reading period. Assesses Practices 1 and 4.</p>
+            <ol><li>Specific, relevant claim (1)</li><li>Specific, accurate evidence from Source 1 with citation (1)</li><li>Explain evidence-to-claim link; apply a psychological concept for full credit (2)</li><li>Different evidence from another source with citation (1)</li><li>Explain link; apply a <em>different</em> psychological concept for full credit (2)</li></ol>
+            <p><strong>Writing rule:</strong> citation marks the evidence; reasoning should follow it. The second application must use a different perspective, theory, concept, or finding.</p>
+            <p><a class="source-link" href="${source181}" target="_blank" rel="noopener">Rubric: PDF pp. 181-185 ↗</a></p>
+          </article>
+          <article class="exam-card searchable" data-group="exam" data-search="task verbs describe explain identify state propose support refute use evidence">
+            <h3>Task verbs</h3>
+            <div class="verb-grid">
+              <div class="verb"><b>Identify / State</b>Name it; no elaboration required.</div>
+              <div class="verb"><b>Describe</b>Give relevant characteristics.</div>
+              <div class="verb"><b>Explain</b>Show how or why with reasoning/evidence.</div>
+              <div class="verb"><b>Propose</b>Give a claim in your own words.</div>
+              <div class="verb"><b>Support / Refute</b>Reason why a claim should stand or fall.</div>
+              <div class="verb"><b>Use evidence</b>Give specific, relevant study information.</div>
+            </div>
+            <p><a class="source-link" href="${source157}" target="_blank" rel="noopener">PDF p. 157 · CED p. 150 ↗</a></p>
+          </article>
+        </div>
+      </section>`;
+    }
+
+    function boundariesSection() {
+      return `<section class="content-section" id="boundaries" data-section-group="boundaries">
+        <div class="section-head"><div><p class="section-kicker">Study smarter</p><h2>CED Boundaries</h2></div><div class="section-meta">These exclusions are easy to miss. They define what the supplied CED says the AP Exam will not assess.</div></div>
+        <article class="searchable" data-group="boundaries" data-search="out of scope exclusion genetics sodium potassium endocrine glands dreams conditioning language pragmatics psychosexual Maslow emotion theory diagnostic disorders">
+          <ul class="boundary-list">
+            <li><strong>Genetics detail:</strong> genotype, phenotype, DNA, chromosomes, and dominant/recessive expression.</li>
+            <li><strong>Neural detail:</strong> sodium-potassium pump; endocrine gland specifics except the pituitary reference.</li>
+            <li><strong>Named chemicals:</strong> exam scope is limited to the listed eight neurotransmitters and five hormones.</li>
+            <li><strong>Dreams:</strong> psychoanalytic dream theory.</li>
+            <li><strong>Sleep/disorders/cues:</strong> only the explicitly listed sleep disorders, monocular cues, and Topic 5.4 disorders are in scope.</li>
+            <li><strong>Development/language:</strong> prenatal stage names (zygote, embryo, fetus); language pragmatics; psychosexual stages.</li>
+            <li><strong>Classical conditioning:</strong> delayed, trace, simultaneous, backward conditioning, and expectancy theory.</li>
+            <li><strong>Personality/emotion:</strong> Maslow’s hierarchy and specific names of emotion theories.</li>
+            <li><strong>Intelligence:</strong> labeling or describing cognitive abilities and disabilities.</li>
+            <li><strong>Clinical caution:</strong> only trained and licensed practitioners should apply diagnostic labels; AP scenarios are for concept application.</li>
+          </ul>
+        </article>
+      </section>`;
+    }
+
+    function currentPageView() {
+      return document.body.dataset.page || "home";
+    }
+
+    function homeDirectory() {
+      const pages = [
+        { href:"unit-0.html", number:"0", title:"Science Practices & Research Methods", meta:"Research design, statistics, ethics, evidence, and all 11 coded skills", color:"#213a7a" },
+        ...units.map(unit => ({ href:`unit-${unit.number}.html`, number:String(unit.number), title:unit.title, meta:`${unit.topics.length} required topics · 15–25% of multiple-choice questions`, color:unit.color })),
+        { href:"exam.html", number:"EX", title:"Exam Playbook", meta:"Exam format, task verbs, AAQ, EBQ, and scoring priorities", color:"#5f4b8b" },
+        { href:"boundaries.html", number:"↗", title:"CED Boundaries", meta:"Explicit exclusions and scope limits collected in one study page", color:"#c85b45" }
+      ];
+      return `<section class="content-section" id="directory" data-section-group="home">
+        <div class="section-head"><div><p class="section-kicker">Page directory</p><h2>Choose a study page</h2></div><div class="section-meta">Each unit now has its own searchable page. The frozen index remains available across every page.</div></div>
+        <div class="page-directory">${pages.map(page => `<a class="page-link-card searchable" data-group="home" data-search="${esc(`${page.number} ${page.title} ${page.meta}`)}" href="${esc(page.href)}" style="--page-color:${esc(page.color)}"><span class="page-link-number">${esc(page.number)}</span><span><b>${esc(page.title)}</b><small>${esc(page.meta)}</small></span><span class="page-link-arrow" aria-hidden="true">→</span></a>`).join("")}</div>
+      </section>`;
+    }
+
+    function renderPage(view) {
+      if (view === "unit0") return practiceSection();
+      const unitMatch = view.match(/^unit([1-5])$/);
+      if (unitMatch) return unitSection(units.find(unit => unit.number === Number(unitMatch[1])));
+      if (view === "exam") return examSection();
+      if (view === "boundaries") return boundariesSection();
+      return homeDirectory();
+    }
+
+    document.getElementById("wiki").innerHTML = renderPage(currentPageView());
+    adaptHostedSourceLinks(document.getElementById("wiki"));
+
+    document.getElementById("wiki").addEventListener("submit", event => {
+      const form = event.target.closest(".concept-quiz-form");
+      if (!form) return;
+      event.preventDefault();
+      const feedback = form.querySelector(".quiz-feedback");
+      const selected = form.querySelector("input[type='radio']:checked");
+      form.querySelectorAll(".quiz-option").forEach(option => option.classList.remove("is-correct", "is-wrong"));
+      if (!selected) {
+        feedback.textContent = "Choose one answer first.";
+        return;
+      }
+      const isCorrect = conceptKey(selected.value) === conceptKey(form.dataset.answer);
+      selected.closest(".quiz-option")?.classList.add(isCorrect ? "is-correct" : "is-wrong");
+      if (!isCorrect) {
+        [...form.querySelectorAll("input[type='radio']")].find(input => conceptKey(input.value) === conceptKey(form.dataset.answer))?.closest(".quiz-option")?.classList.add("is-correct");
+      }
+      feedback.textContent = isCorrect
+        ? `Correct. ${form.dataset.definition}`
+        : `Not quite. The answer is ${form.dataset.answer}. ${form.dataset.definition}`;
+    });
+
+    document.getElementById("wiki").addEventListener("change", event => {
+      const form = event.target.closest(".concept-quiz-form");
+      if (!form) return;
+      form.querySelectorAll(".quiz-option").forEach(option => option.classList.remove("is-correct", "is-wrong"));
+      form.querySelector(".quiz-feedback").textContent = "";
+    });
+
+    const searchInput = document.getElementById("search");
+    const resultCount = document.getElementById("resultCount");
+    const noResults = document.getElementById("noResults");
+    const searchSuggestions = document.getElementById("searchSuggestions");
+    const previousMatch = document.getElementById("previousMatch");
+    const nextMatch = document.getElementById("nextMatch");
+    const filterButtons = [...document.querySelectorAll(".filter")];
+    let activeFilter = "all";
+    let localMatches = [];
+    let currentMatchIndex = -1;
+    let searchTimer;
+    const pageView = currentPageView();
+    const pageTitles = {
+      unit0:"Unit 0 · Science Practices & Research Methods",
+      unit1:"Unit 1 · Biological Bases of Behavior",
+      unit2:"Unit 2 · Cognition",
+      unit3:"Unit 3 · Development and Learning",
+      unit4:"Unit 4 · Social Psychology and Personality",
+      unit5:"Unit 5 · Mental and Physical Health",
+      exam:"Exam Playbook",
+      boundaries:"CED Boundaries"
+    };
+    document.querySelector(".hero").hidden = pageView !== "home";
+    if (pageTitles[pageView]) document.title = `${pageTitles[pageView]} · 2026 AP Psych CED`;
+
+    const normalize = (value) => value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const queryTokens = (value) => normalize(value.trim()).split(/\s+/).filter(Boolean);
+    const containsTokens = (value, tokens) => {
+      const haystack = normalize(String(value || ""));
+      return tokens.every(token => haystack.includes(token));
+    };
+
+    const topicLookup = new Map(units.flatMap(unit => unit.topics.map(topic => [topic.code, { ...topic, unit }])));
+    const pageForTopic = (topicCode) => topicCode === "unit0" ? "unit-0.html" : `unit-${String(topicCode).split(".")[0]}.html`;
+    const pageLabelForTopic = (topicCode) => topicCode === "unit0" ? "Unit 0" : `Unit ${String(topicCode).split(".")[0]}`;
+    const globalSearchIndex = [
+      ...units.flatMap(unit => unit.topics.map(topic => ({
+        type:"topic", title:`${topic.code} ${topic.title}`, topicCode:topic.code, page:`unit-${unit.number}.html`, id:topicId(topic.code), pageLabel:`Unit ${unit.number}`,
+        text:[topic.code, topic.title, topic.purpose, ...topic.terms, ...topic.bullets.map(strip), ...(comparisonGroups[topic.code] || []).flatMap(group => [group.title, ...group.concepts])].join(" ")
+      }))),
+      ...Object.entries(cedConcepts).flatMap(([topicCode, entries]) => entries.map(entry => ({
+        type:"concept", title:entry.concept, topicCode, page:pageForTopic(topicCode), id:conceptId(topicCode, entry.concept), pageLabel:pageLabelForTopic(topicCode),
+        text:[entry.concept, entry.definition, exampleFor(entry, topicCode), ...(entry.cedTerms || []), entry.cedCode || ""].join(" ")
+      }))),
+      ...Object.entries(barronExtraConcepts).flatMap(([topicCode, entries]) => entries.map(entry => ({
+        type:"enrichment", title:entry.concept, topicCode, page:pageForTopic(topicCode), id:conceptId(topicCode, entry.concept), pageLabel:pageLabelForTopic(topicCode),
+        text:[entry.concept, entry.definition, exampleFor(entry, topicCode)].join(" ")
+      })))
+    ];
+
+    function wikiSearch(query) {
+      const tokens = queryTokens(query);
+      if (!tokens.length) return [];
+      const normalizedQuery = normalize(query.trim());
+      return globalSearchIndex
+        .filter(item => containsTokens(item.text, tokens))
+        .map(item => {
+          const title = normalize(item.title);
+          const rank = title === normalizedQuery ? 0 : title.startsWith(normalizedQuery) ? 1 : title.includes(normalizedQuery) ? 2 : item.type === "topic" ? 4 : 3;
+          return { ...item, rank };
+        })
+        .sort((a, b) => a.rank - b.rank || a.title.localeCompare(b.title))
+        .slice(0, 12);
+    }
+
+    function suggestionHref(item) {
+      const url = new URL(item.page, window.location.href);
+      url.searchParams.set("search", item.title);
+      url.hash = item.id;
+      return url.href;
+    }
+
+    function renderSearchSuggestions(query) {
+      const results = wikiSearch(query);
+      if (!query.trim()) {
+        searchSuggestions.hidden = true;
+        searchSuggestions.innerHTML = "";
+        return results;
+      }
+      searchSuggestions.innerHTML = results.length ? results.map((item, index) => `<a class="search-suggestion" role="option" aria-selected="${index === 0 ? "true" : "false"}" href="${esc(suggestionHref(item))}"><span class="search-suggestion-code">${esc(item.type)}</span><span><b>${esc(item.title)}</b><small>${esc(item.type === "topic" ? topicLookup.get(item.topicCode)?.purpose || "Topic overview" : item.text.slice(0, 125))}</small></span><span class="search-suggestion-page">${esc(item.pageLabel)} · ${esc(item.topicCode)}</span></a>`).join("") : `<div class="search-suggestion"><span class="search-suggestion-code">No match</span><span><b>Try a broader term</b><small>Search concept names, definitions, examples, topic codes, or CED keywords.</small></span><span></span></div>`;
+      searchSuggestions.hidden = false;
+      return results;
+    }
+
+    function revealAncestors(element) {
+      let details = element.closest("details");
+      while (details) {
+        details.open = true;
+        details = details.parentElement?.closest("details");
+      }
+    }
+
+    function focusLocalMatch(index, behavior = "smooth") {
+      if (!localMatches.length) return;
+      currentMatchIndex = (index + localMatches.length) % localMatches.length;
+      document.querySelectorAll(".search-current").forEach(element => element.classList.remove("search-current"));
+      const target = localMatches[currentMatchIndex];
+      revealAncestors(target);
+      target.hidden = false;
+      target.classList.add("search-current");
+      target.scrollIntoView({ behavior, block:"center" });
+      resultCount.textContent = `${currentMatchIndex + 1}/${localMatches.length} local`;
+    }
+
+    function applyFilters() {
+      const rawQuery = searchInput.value.trim();
+      const tokens = queryTokens(rawQuery);
+      const hasQuery = tokens.length > 0;
+      const cards = [...document.querySelectorAll(".searchable")];
+      let visible = 0;
+
+      document.querySelectorAll(".search-match, .search-current").forEach(element => element.classList.remove("search-match", "search-current"));
+      const preciseMatches = [...document.querySelectorAll("[data-search-target]")].filter(target => hasQuery && containsTokens(target.dataset.search || target.textContent, tokens));
+      preciseMatches.forEach(target => target.classList.add("search-match"));
+
+      document.querySelectorAll(".concept-grid").forEach(grid => {
+        const entries = [...grid.querySelectorAll(":scope > .concept-entry")];
+        const hits = entries.filter(entry => preciseMatches.includes(entry));
+        entries.forEach(entry => { entry.hidden = hasQuery && hits.length > 0 && !hits.includes(entry); });
+      });
+      document.querySelectorAll(".ek-list").forEach(list => {
+        const entries = [...list.querySelectorAll(":scope > .ek-item")];
+        const hits = entries.filter(entry => preciseMatches.includes(entry));
+        entries.forEach(entry => { entry.hidden = hasQuery && hits.length > 0 && !hits.includes(entry); });
+      });
+
+      cards.forEach(card => {
+        const groupOK = activeFilter === "all" || card.dataset.group === activeFilter;
+        const queryOK = !hasQuery || containsTokens(card.dataset.search || card.textContent, tokens);
+        const show = groupOK && queryOK;
+        card.hidden = !show;
+        if (show) {
+          visible++;
+          if (hasQuery && card.tagName === "DETAILS") card.open = true;
+        }
+      });
+
+      preciseMatches.forEach(revealAncestors);
+
+      document.querySelectorAll("[data-section-group]").forEach(section => {
+        const any = [...section.querySelectorAll(".searchable")].some(card => !card.hidden);
+        section.hidden = !any;
+      });
+
+      const normalizedQuery = normalize(rawQuery);
+      const visiblePrecise = preciseMatches.filter(target => !target.closest("[hidden]")).sort((a, b) => {
+        const titleA = normalize(a.querySelector("h5")?.textContent || "");
+        const titleB = normalize(b.querySelector("h5")?.textContent || "");
+        const rank = (target, title) => target.classList.contains("concept-entry") && title === normalizedQuery ? 0 : target.classList.contains("concept-entry") && title.includes(normalizedQuery) ? 1 : target.classList.contains("concept-entry") ? 2 : target.classList.contains("ek-item") ? 3 : 4;
+        const rankDifference = rank(a, titleA) - rank(b, titleB);
+        return rankDifference || (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+      });
+      localMatches = visiblePrecise.length ? visiblePrecise : hasQuery ? cards.filter(card => !card.hidden) : [];
+      currentMatchIndex = -1;
+      previousMatch.disabled = localMatches.length === 0;
+      nextMatch.disabled = localMatches.length === 0;
+      const wikiMatches = renderSearchSuggestions(rawQuery);
+      resultCount.textContent = hasQuery ? `${localMatches.length} local · ${wikiMatches.length}${wikiMatches.length === 12 ? "+" : ""} wiki` : `${visible} ${visible === 1 ? "card" : "cards"}`;
+      noResults.classList.toggle("show", visible === 0);
+    }
+
+    searchInput.addEventListener("input", () => {
+      window.clearTimeout(searchTimer);
+      applyFilters();
+      if (searchInput.value.trim()) searchTimer = window.setTimeout(() => focusLocalMatch(0), 320);
+    });
+    searchInput.addEventListener("focus", () => { if (searchInput.value.trim()) renderSearchSuggestions(searchInput.value); });
+    previousMatch.addEventListener("click", () => focusLocalMatch(currentMatchIndex - 1));
+    nextMatch.addEventListener("click", () => focusLocalMatch(currentMatchIndex + 1));
+    filterButtons.forEach(button => button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach(b => b.setAttribute("aria-pressed", String(b === button)));
+      applyFilters();
+      const firstVisible = document.querySelector(".content-section:not([hidden])");
+      if (firstVisible) firstVisible.scrollIntoView({behavior:"smooth", block:"start"});
+    }));
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "/" && document.activeElement !== searchInput) {
+        event.preventDefault(); searchInput.focus();
+      }
+      if (event.key === "Escape" && document.activeElement === searchInput) {
+        searchInput.value = ""; searchInput.blur(); searchSuggestions.hidden = true; applyFilters();
+      }
+      if (event.key === "Enter" && document.activeElement === searchInput) {
+        event.preventDefault();
+        if (localMatches.length) focusLocalMatch(currentMatchIndex + 1);
+        else searchSuggestions.querySelector("a.search-suggestion")?.click();
+      }
+    });
+
+    document.addEventListener("click", event => {
+      if (!event.target.closest(".search-wrap")) searchSuggestions.hidden = true;
+      const node = event.target.closest(".mindmap-node, .unit-tree-concept");
+      if (!node) return;
+      const topicCard = node.closest("details.card");
+      const target = node.dataset.targetId
+        ? document.getElementById(node.dataset.targetId)
+        : [...topicCard.querySelectorAll(".concept-entry")].find(entry => entry.dataset.conceptKey === node.dataset.conceptKey);
+      if (!target) return;
+      revealAncestors(target);
+      document.querySelectorAll(".search-current").forEach(element => element.classList.remove("search-current"));
+      target.hidden = false;
+      target.classList.add("search-current");
+      target.scrollIntoView({ behavior:"smooth", block:"center" });
+    });
+
+    function syncPageNavigation() {
+      document.querySelectorAll("[data-page-link]").forEach(link => {
+        if (link.dataset.pageLink === pageView) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }
+
+    document.getElementById("backToTop").addEventListener("click", () => {
+      const root = document.documentElement;
+      const previousInlineBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      root.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.requestAnimationFrame(() => { root.style.scrollBehavior = previousInlineBehavior; });
+    });
+
+    const initialSearch = new URL(window.location.href).searchParams.get("search") || "";
+    if (initialSearch) searchInput.value = initialSearch;
+    applyFilters();
+    syncPageNavigation();
+    window.setTimeout(() => {
+      const hashTarget = window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
+      if (hashTarget) {
+        revealAncestors(hashTarget);
+        hashTarget.hidden = false;
+        hashTarget.classList.add("search-current");
+        hashTarget.scrollIntoView({ behavior:"auto", block:"center" });
+      } else if (initialSearch && localMatches.length) {
+        focusLocalMatch(0, "auto");
+      }
+      if (initialSearch) searchSuggestions.hidden = true;
+    }, 80);
+  </script>
+</body>
+</html>

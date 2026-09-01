@@ -1,0 +1,32 @@
+[
+  {
+    "title": "File:Forgetting curve and work of Ebbinghaus.png",
+    "file": "assets/web/forgetting-curve.png",
+    "pageUrl": "https://commons.wikimedia.org/wiki/File%3AForgetting_curve_and_work_of_Ebbinghaus.png",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Forgetting_curve_and_work_of_Ebbinghaus.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "Productive.Fish",
+    "description": "The forgetting curve is a concept developed by the German psychologist Hermann Ebbinghaus in the late 19th century. According to Ebbinghaus, the forgetting curve represents the decline in memory retention over time when no effort is made to retain or recall the information. He conducted numerous experiments using himself as the subject, memorizing lists of nonsense syllables and measuring his ability to recall them at different time intervals. Ebbinghaus found that forgetting occurs rapidly shortly after learning, with a significant drop in recall within the first few hours or days. However, the rate of forgetting gradually levels off, indicating that some information can be retained for a longer period. The forgetting curve and work of Ebbinghaus that to space things out and remind yourself on multiple occasions with intervals increasing in size to maximize effort and recall each time. Learn more about spaced repetition: https://productive.fish/blog/spaced-repetition/"
+  },
+  {
+    "title": "File:Big Five 1.png",
+    "file": "assets/web/big-five.png",
+    "pageUrl": "https://commons.wikimedia.org/wiki/File%3ABig_Five_1.png",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Big_Five_1.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "MissLunaRose12",
+    "description": "The Big Five model is also known as OCEAN or the five-factor model."
+  },
+  {
+    "title": "File:Cognitive behavioral therapy - basic tenets.svg",
+    "file": "assets/web/cbt-triangle.png",
+    "pageUrl": "https://commons.wikimedia.org/wiki/File%3ACognitive_behavioral_therapy_-_basic_tenets.svg",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Cognitive_behavioral_therapy_-_basic_tenets.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "Urstadt",
+    "description": "The diagram depicts how feelings, thoughts, and behaviors all influence each other. The triangle in the middle represents CBT's tenet that all humans' core beliefs can be organized using three categories: self, others, future."
+  }
+]
