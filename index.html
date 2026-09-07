@@ -1198,6 +1198,47 @@
 
     .research-source:hover { text-decoration: underline; }
 
+    .concept-video {
+      margin: 14px 0 2px;
+      overflow: hidden;
+      border: 1px solid #ccd9d0;
+      border-radius: 12px;
+      background: #101824;
+      box-shadow: 0 5px 18px rgba(25, 38, 48, .09);
+    }
+
+    .concept-video video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #101824;
+      object-fit: contain;
+    }
+
+    .concept-video figcaption {
+      padding: 10px 12px 11px;
+      background: #f2f8f3;
+      color: #304940;
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+
+    .concept-video figcaption b {
+      display: block;
+      margin-bottom: 2px;
+      color: #174f49;
+      font-size: 11.5px;
+    }
+
+    .concept-video-meta {
+      display: block;
+      margin-top: 5px;
+      color: #64756e;
+      font-size: 9.5px;
+      font-weight: 750;
+      letter-spacing: .02em;
+    }
+
     .card ul {
       margin: 0;
       padding-left: 19px;
@@ -2559,6 +2600,44 @@
       ]}
     };
 
+    const researchMethodVideos = {
+      "experiment": {
+        title: "Experiment",
+        src: "assets/videos/experiment.mp4",
+        poster: "assets/videos/experiment-poster.jpg",
+        duration: "2:12",
+        description: "A caffeine-and-reaction-time scenario clarifies manipulation, comparison groups, variables, and why a well-controlled experiment can support a causal claim."
+      },
+      "correlational study": {
+        title: "Correlational study",
+        src: "assets/videos/correlational-study.mp4",
+        poster: "assets/videos/correlational-study-poster.jpg",
+        duration: "2:05",
+        description: "A screen-time-and-sleep scenario distinguishes association from causation and highlights directionality and third-variable explanations."
+      },
+      "naturalistic observation": {
+        title: "Naturalistic observation",
+        src: "assets/videos/naturalistic-observation.mp4",
+        poster: "assets/videos/naturalistic-observation-poster.jpg",
+        duration: "2:09",
+        description: "A playground-sharing scenario shows how researchers record ordinary behavior without manipulating the setting."
+      },
+      "case study": {
+        title: "Case study",
+        src: "assets/videos/case-study.mp4",
+        poster: "assets/videos/case-study-poster.jpg",
+        duration: "2:09",
+        description: "A rare memory-change scenario shows the depth of an intensive investigation and the limits on generalizing from one unusual case."
+      },
+      "meta analysis": {
+        title: "Meta-analysis",
+        src: "assets/videos/meta-analysis.mp4",
+        poster: "assets/videos/meta-analysis-poster.jpg",
+        duration: "2:51",
+        description: "A phone-free-study scenario demonstrates how results from multiple studies are combined to estimate an overall effect."
+      }
+    };
+
     const researchMethodToolkit = [
       {
         title: "Choose the design before judging the claim",
@@ -2841,6 +2920,19 @@
       }));
     }
 
+    function conceptVideoFor(entry, topicCode) {
+      if (topicCode !== "unit0") return "";
+      const video = researchMethodVideos[conceptKey(entry.concept)];
+      if (!video) return "";
+      return `<figure class="concept-video">
+        <video controls preload="metadata" playsinline poster="${esc(video.poster)}" aria-label="${esc(`${video.title} research-method explainer`)}">
+          <source src="${esc(video.src)}" type="video/mp4">
+          Your browser does not support embedded MP4 video.
+        </video>
+        <figcaption><b>Video explainer · ${esc(video.title)}</b>${esc(video.description)}<span class="concept-video-meta">${esc(video.duration)} · 1080p · on-screen captions · loads when played</span></figcaption>
+      </figure>`;
+    }
+
     function conceptSection(entries, figures = [], options = {}) {
       if (!entries.length) return "";
       const heading = options.heading || "Key concepts from Essential Knowledge";
@@ -2856,6 +2948,7 @@
             <h5>${esc(entry.concept)}</h5>
             <p><b>Definition</b><br>${esc(entry.definition)}</p>
             <p><b>Example</b><br>${esc(example)}</p>
+            ${conceptVideoFor(entry, topicCode)}
             ${conceptQuiz(entry, topicCode)}
             <div class="concept-source-row">
               ${entry.cedCode ? `<a class="concept-source ced-concept-source" href="${cedPage(entry.cedPage)}" target="_blank" rel="noopener">CED ${esc(entry.cedCode)} ↗</a>` : ""}
